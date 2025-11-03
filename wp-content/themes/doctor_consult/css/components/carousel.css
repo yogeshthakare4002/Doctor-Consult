@@ -1,0 +1,212 @@
+/* Carousel Component Styles */
+.carousel-container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.carousel-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.carousel-view-all {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #20B2AA;
+    border-radius: 8px;
+    color: #20B2AA;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.carousel-view-all:hover {
+    background-color: #20B2AA;
+    color: white;
+    text-decoration: none;
+}
+
+.carousel-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 16px;
+    min-height: 100px;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    min-width: 0;
+    /* Width will be set dynamically by JavaScript based on items_per_view */
+}
+
+/* Navigation Buttons */
+.carousel-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.carousel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background-color: #EDF2F9;
+    color: #30363C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    z-index: 100;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.carousel-prev {
+    margin-left: -20px;
+}
+
+.carousel-next {
+    margin-right: -20px;
+}
+
+/* Dots Navigation */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #20B2AA;
+    transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+    background-color: #20B2AA;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 0 16px;
+    }
+    
+    .carousel-title {
+        font-size: 24px;
+    }
+    
+    .carousel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .carousel-view-all {
+        align-self: flex-end;
+    }
+    
+    .carousel-navigation {
+        display: none;
+    }
+    
+    .carousel-track {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .carousel-track::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-title {
+        font-size: 20px;
+    }
+    
+    .carousel-view-all {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Animation for smooth transitions */
+.carousel-track.smooth {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading state */
+.carousel-container.loading .carousel-track {
+    opacity: 0.6;
+}
+
+.carousel-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #20B2AA;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

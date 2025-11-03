@@ -1,0 +1,22 @@
+/**
+ * Footer Styles
+ * WordPress footer styles
+ */
+
+/* Footer Styles */
+.site-footer {
+    background: #1f2937;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}

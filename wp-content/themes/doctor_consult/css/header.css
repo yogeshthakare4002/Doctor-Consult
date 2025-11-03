@@ -1,0 +1,50 @@
+/**
+ * Header Styles
+ * WordPress header and navigation styles
+ */
+
+/* Header Styles - Basic WordPress header */
+.site-header {
+    background: #1e293b;
+    color: white;
+    padding: 20px 0;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.site-title:hover {
+    color: #10b981;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .site-header .container {
+        padding: 0 40px;
+    }
+    
+    .site-title {
+        font-size: 28px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .site-header {
+        padding: 15px 0;
+    }
+    
+    .site-title {
+        font-size: 20px;
+    }
+}

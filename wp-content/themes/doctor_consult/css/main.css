@@ -1,0 +1,16 @@
+/**
+ * Main CSS File
+ * Imports all component CSS files
+ */
+
+/* Import Base Styles */
+@import url('base.css');
+
+/* Import Header Styles */
+@import url('header.css');
+
+/* Import Footer Styles */
+@import url('footer.css');
+
+/* Import Banner Styles */
+@import url('banner.css');
