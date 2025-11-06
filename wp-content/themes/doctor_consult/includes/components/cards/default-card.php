@@ -45,11 +45,6 @@
     border: 1px solid #e0e0e0;
 }
 
-.carousel-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 .card-image {
     width: 100%;
     height: 200px;

@@ -4,57 +4,49 @@
  * Displays medical specialities in a carousel format
  */
 
-// Sample data for specialities
-$specialities_data = array(
-    array(
-        'title' => 'hello General Physician',
-        'description' => 'Expert in managing common illnesses such as cold, flu, fever, infections, and general health concerns.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#general-physician'
-    ),
-    array(
-        'title' => 'Heart Specialist',
-        'description' => 'Specializes in cardiovascular diseases, heart conditions, and preventive cardiac care.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#heart-specialist'
-    ),
-    array(
-        'title' => 'Gynaecologist',
-        'description' => 'Treats women\'s health issues including PCOS, menstruation problems, and hormonal imbalances.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#gynaecologist'
-    ),
-    array(
-        'title' => 'Dermatologist',
-        'description' => 'Specializes in skin, hair, and nail conditions including acne, eczema, and skin cancer screening.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#dermatologist'
-    ),
-    array(
-        'title' => 'Pediatrician',
-        'description' => 'Provides comprehensive healthcare for infants, children, and adolescents up to 18 years.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#pediatrician'
-    ),
-    array(
-        'title' => 'Orthopedist',
-        'description' => 'Treats bone, joint, muscle, and ligament problems including fractures and sports injuries.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#orthopedist'
-    ),
-    array(
-        'title' => 'Neurologist',
-        'description' => 'Specializes in disorders of the nervous system including brain, spinal cord, and nerve conditions.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#neurologist'
-    ),
-    array(
-        'title' => 'Psychiatrist',
-        'description' => 'Provides mental health care including depression, anxiety, bipolar disorder, and addiction treatment.',
-        'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
-        'link' => '#psychiatrist'
-    )
-);
+// Fetch specialities data from database
+global $wpdb;
+
+// Use wp_ prefix for local, no prefix for staging/production
+if (defined('WP_ENVIRONMENT') && WP_ENVIRONMENT === 'local') {
+    $table_name = $wpdb->prefix . 'specialities'; // Local: wp_specialities
+} else {
+    $table_name = 'specialities'; // Staging/Production: specialities
+}
+
+// Check if table exists
+$table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'") === $table_name;
+
+// Fetch all specialities from database
+$specialities_results = null;
+if ($table_exists) {
+    $specialities_results = $wpdb->get_results("SELECT id, title, description, link FROM $table_name ORDER BY id ASC");
+    
+    // Check for query errors
+    if ($wpdb->last_error) {
+        error_log('Specialities query error: ' . $wpdb->last_error);
+    }
+}
+
+// Transform database results into the format expected by carousel
+$specialities_data = array();
+if ($specialities_results) {
+    foreach ($specialities_results as $speciality) {
+        $specialities_data[] = array(
+            'title' => $speciality->title,
+            'description' => $speciality->description,
+            'image' => get_template_directory_uri() . '/assets/images/doctor.svg',
+            'link' => $speciality->link
+        );
+    }
+} else {
+    // Log error if table exists but has no data
+    if ($table_exists) {
+        error_log('No specialities found in table ' . $table_name);
+    } else {
+        error_log('Table ' . $table_name . ' does not exist in database');
+    }
+}
 
 // Carousel configuration
 $config = array(
@@ -73,7 +65,7 @@ $config = array(
 );
 
 // Include the carousel function
-require_once get_template_directory() . '/includes/components/carousel-function.php';
+require_once get_template_directory() . '/includes/core/carousel-function.php';
 
 // Render the carousel for desktop
 echo render_carousel($specialities_data, $config);
@@ -89,7 +81,7 @@ echo render_carousel($specialities_data, $config);
         <?php foreach ($specialities_data as $index => $item): ?>
                 <?php 
                 // Use the same card template as the carousel
-                $template_file = get_template_directory() . '/includes/components/carousel-cards/speciality.php';
+                $template_file = get_template_directory() . '/includes/components/cards/speciality-card.php';
                 if (file_exists($template_file)) {
                     include $template_file;
                 }

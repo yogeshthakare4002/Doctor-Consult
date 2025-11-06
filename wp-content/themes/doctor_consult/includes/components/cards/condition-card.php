@@ -46,12 +46,6 @@ $index = $index ?? 0;
     object-fit: contain;
   }
 
-  .condition-icon img:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    border-color: #20B2AA;
-  }
-
   .condition-name {
     font-family: Inter;
     font-weight: 400;

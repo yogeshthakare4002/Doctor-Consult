@@ -18,18 +18,30 @@
  * @package WordPress
  */
 
+// ** Environment Configuration ** //
+// Set your environment: 'local', 'staging', or 'production'
+define( 'WP_ENVIRONMENT', 'local' );
+
 // ** Database settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define( 'DB_NAME', 'wordpress_db' );
-
-/** Database username */
-define( 'DB_USER', 'root' );
-
-/** Database password */
-define( 'DB_PASSWORD', '' );
-
-/** Database hostname */
-define( 'DB_HOST', 'localhost' );
+if ( WP_ENVIRONMENT === 'local' ) {
+    // Local Development Database
+    define( 'DB_NAME', 'wordpress_db' );
+    define( 'DB_USER', 'root' );
+    define( 'DB_PASSWORD', '' );
+    define( 'DB_HOST', 'localhost' );
+} elseif ( WP_ENVIRONMENT === 'staging' ) {
+    // Staging Database (Hostinger)
+    define( 'DB_NAME', 'u914396707_doctor_consult' );
+    define( 'DB_USER', 'u914396707_instinct_IIPL' );
+    define( 'DB_PASSWORD', 'Instinct_2025' );
+    define( 'DB_HOST', 'localhost' );
+} else {
+    // Production Database (Hostinger)
+    define( 'DB_NAME', 'u914396707_doctor_consult' );
+    define( 'DB_USER', 'u914396707_instinct_IIPL' );
+    define( 'DB_PASSWORD', 'Instinct_2025' );
+    define( 'DB_HOST', 'localhost' );
+}
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );

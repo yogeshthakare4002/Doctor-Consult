@@ -1,0 +1,62 @@
+# WordPress Core Files
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+
+# Configuration Files (contains sensitive data)
+wp-config.php
+.htaccess
+
+# Uploaded Files
+/wp-content/uploads/
+
+# Cache
+/wp-content/cache/
+/wp-content/plugins/*/cache/
+
+# Backup files
+*.sql
+*.tar.gz
+*.zip
+backup/
+
+# Log files
+*.log
+error_log
+debug.log
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node Modules (if using any build tools)
+node_modules/
+package-lock.json
+
+# Composer
+/vendor/
+
+# Environment Files
+.env
+.env.local
+.env.production
+
+# Keep local setup SQL
+!setup-local-db.sql
+!DEPLOYMENT-GUIDE.md
+

@@ -4,39 +4,48 @@
  * Displays frequently asked questions with different layouts for desktop and mobile
  */
 
-// FAQ data structure
-$faqs = [
-  [
-    'question' => 'Is my consultation private?',
-    'answer' => 'Yes, doctors are available 24/7, even on weekends and holidays.',
-    'is_list' => false
-  ],
-  [
-    'question' => 'Can I talk to a doctor late at night?',
-    'answer' => 'Yes, doctors are available 24/7, even on weekends and holidays.',
-    'is_list' => false
-  ],
-  [
-    'question' => 'How do I get a prescription?',
-    'answer' => 'Yes, doctors are available 24/7, even on weekends and holidays.',
-    'is_list' => false
-  ],
-  [
-    'question' => 'Can I cancel or reschedule my appointment?',
-    'answer' => 'Yes, doctors are available 24/7, even on weekends and holidays.',
-    'is_list' => false
-  ],
-  [
-    'question' => 'Will I get a refund if I cancel?',
-    'answer' => 'Yes, doctors are available 24/7, even on weekends and holidays.',
-    'is_list' => false
-  ],
-  [
-    'question' => 'Can I consult without downloading an app?',
-    'answer' => 'Yes, doctors are available 24/7, even on weekends and holidays.',
-    'is_list' => false
-  ]
-];
+// Fetch FAQ data from database
+global $wpdb;
+
+// Use wp_ prefix for local, no prefix for staging/production
+if (defined('WP_ENVIRONMENT') && WP_ENVIRONMENT === 'local') {
+    $table_name = $wpdb->prefix . 'faq'; // Local: wp_faq
+} else {
+    $table_name = 'faq'; // Staging/Production: faq
+}
+
+// Check if table exists
+$table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'") === $table_name;
+
+// Fetch all FAQ from database
+$faq_results = null;
+if ($table_exists) {
+    $faq_results = $wpdb->get_results("SELECT id, question, answer FROM $table_name ORDER BY id ASC");
+    
+    // Check for query errors
+    if ($wpdb->last_error) {
+        error_log('FAQ query error: ' . $wpdb->last_error);
+    }
+}
+
+// Transform database results into the format expected by template
+$faqs = array();
+if ($faq_results) {
+    foreach ($faq_results as $faq) {
+        $faqs[] = array(
+            'question' => $faq->question,
+            'answer' => $faq->answer,
+            'is_list' => false // Default to plain text, can be enhanced later
+        );
+    }
+} else {
+    // Log error if table exists but has no data
+    if ($table_exists) {
+        error_log('No FAQ found in table ' . $table_name);
+    } else {
+        error_log('Table ' . $table_name . ' does not exist in database');
+    }
+}
 
 $default_open_index = 1; // 0-based index for which item should be open by default on mobile
 ?>

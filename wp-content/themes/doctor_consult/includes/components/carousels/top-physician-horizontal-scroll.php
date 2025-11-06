@@ -74,7 +74,7 @@ $physicians_data = array(
           $item = $physician;
           $index = $index;
           // Include the small physician card template
-          include get_template_directory() . '/includes/components/carousel-cards/physician-card.php';
+          include get_template_directory() . '/includes/components/cards/physician-card.php';
           ?>
         <?php endforeach; ?>
       </div>

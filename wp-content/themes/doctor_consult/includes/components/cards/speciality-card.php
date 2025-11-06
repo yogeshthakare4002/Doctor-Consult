@@ -44,11 +44,12 @@
 
 <style>
   /* Speciality Card Styles - Self-contained in template */
-  .speciality-card {
+  .speciality-card.speciality-card {
     position: relative;
     background: #F1FAFE;
     border-radius: 12px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     height: 100px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

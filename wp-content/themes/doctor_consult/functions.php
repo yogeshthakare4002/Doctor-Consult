@@ -10,10 +10,10 @@ if (!defined('ABSPATH')) {
 }
 
 // Include database setup
-require_once get_template_directory() . '/includes/database-setup.php';
+require_once get_template_directory() . '/includes/core/database-setup.php';
 
 // Include admin interface
-require_once get_template_directory() . '/includes/admin-interface.php';
+require_once get_template_directory() . '/includes/admin/admin-interface.php';
 
 /**
  * Theme setup

@@ -44,7 +44,7 @@ $carousel_id = 'reviews-carousel-' . uniqid();
   <div class="reviews-desktop">
     <?php
       if (!function_exists('render_carousel')) {
-        include get_template_directory() . '/includes/components/carousel-function.php';
+        include get_template_directory() . '/includes/core/carousel-function.php';
       }
       echo render_carousel($reviews, array(
         'title'           => '',
@@ -66,7 +66,7 @@ $carousel_id = 'reviews-carousel-' . uniqid();
     <div class="reviews-scroll">
       <?php foreach ($reviews as $index => $item): ?>
         <div class="carousel-item" data-index="<?php echo esc_attr($index); ?>">
-          <?php include get_template_directory() . '/includes/components/carousel-cards/review.php'; ?>
+          <?php include get_template_directory() . '/includes/components/cards/review-card.php'; ?>
         </div>
       <?php endforeach; ?>
     </div>

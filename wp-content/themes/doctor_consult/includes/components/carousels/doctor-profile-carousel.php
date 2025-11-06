@@ -97,7 +97,7 @@ $config = array(
 );
 
 // Include the carousel function
-require_once get_template_directory() . '/includes/components/carousel-function.php';
+require_once get_template_directory() . '/includes/core/carousel-function.php';
 
 // Render the carousel for desktop
 echo render_carousel($doctors_data, $config);
@@ -116,7 +116,7 @@ echo render_carousel($doctors_data, $config);
             $item = $doctor;
             $index = $index;
             // Include the existing doctor profile card template
-            include get_template_directory() . '/includes/components/carousel-cards/doctor-profile.php';
+            include get_template_directory() . '/includes/components/cards/doctor-profile-card.php';
             ?>
         <?php endforeach; ?>
     </div>

@@ -64,12 +64,12 @@ function render_carousel($items = array(), $config = array()) {
                         <div class="carousel-item" data-index="<?php echo esc_attr($index); ?>">
                             <?php 
                             // Load different card templates based on configuration
-                            $template_file = get_template_directory() . '/includes/components/carousel-cards/' . $config['card_template'] . '.php';
+                            $template_file = get_template_directory() . '/includes/components/cards/' . $config['card_template'] . '-card.php';
                             if (file_exists($template_file)) {
                                 include $template_file;
                             } else {
                                 // Default card template
-                                include get_template_directory() . '/includes/components/carousel-cards/default.php';
+                                include get_template_directory() . '/includes/components/cards/default-card.php';
                             }
                             ?>
                         </div>

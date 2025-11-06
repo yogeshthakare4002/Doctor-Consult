@@ -10,12 +10,12 @@
     
     <!-- Breadcrumb Component -->
     <div class="header-nav-item breadcrumb-wrapper">
-      <?php include get_template_directory() . '/includes/components/breadcrumb.php'; ?>
+      <?php include get_template_directory() . '/includes/components/navigation/breadcrumb.php'; ?>
     </div>
     
     <!-- Hindi Language Switch Component -->
     <div class="header-nav-item hindi-lang-wrapper">
-      <?php include get_template_directory() . '/includes/components/hindi-lang.php'; ?>
+      <?php include get_template_directory() . '/includes/components/navigation/hindi-lang.php'; ?>
     </div>
     
   </div>
