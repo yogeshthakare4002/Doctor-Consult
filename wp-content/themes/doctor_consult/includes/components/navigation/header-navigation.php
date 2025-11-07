@@ -71,41 +71,7 @@
 
 @media (max-width: 768px) {
   .header-navigation {
-    padding: 12px 0;
-  }
-  
-  .header-navigation-container {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  
-  .breadcrumb-wrapper {
-    order: 1;
-    width: 100%;
-  }
-  
-  .searchbox-wrapper {
-    order: 2;
-    flex: 1;
-    max-width: none;
-  }
-  
-  .hindi-lang-wrapper {
-    order: 3;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-navigation-container {
-    padding: 0 12px;
-  }
-  
-  .searchbox-wrapper {
-    width: 100%;
-  }
-  
-  .hindi-lang-wrapper {
-    width: 100%;
+    display: none;
   }
 }
 </style>

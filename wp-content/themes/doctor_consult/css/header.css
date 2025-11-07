@@ -1,50 +1,218 @@
 /**
  * Header Styles
- * WordPress header and navigation styles
+ * PharmEasy header and navigation styles
  */
 
-/* Header Styles - Basic WordPress header */
+/* Header Styles */
 .site-header {
-    background: #1e293b;
+    background: #10847E;
     color: white;
-    padding: 20px 0;
+    padding: 0;
+    position: relative;
 }
 
-.site-header .container {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 928px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
 }
 
-.site-title {
+/* Hamburger Menu Styles - Hidden on Desktop */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* Logo Styles */
+.header-logo {
+    flex-shrink: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* SVG icon color - White on all views */
+.logo-icon svg path {
+    fill: white;
+}
+
+.logo-text {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.logo-link:hover .logo-text {
+    opacity: 0.9;
+}
+
+/* Navigation Styles */
+.header-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
     color: white;
     text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    transition: opacity 0.2s ease;
+    display: block;
 }
 
-.site-title:hover {
-    color: #10b981;
+.nav-link:hover {
+    opacity: 0.8;
 }
 
-/* Desktop Styles */
-@media (min-width: 768px) {
-    .site-header .container {
-        padding: 0 40px;
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 20px 25px;
     }
     
-    .site-title {
-        font-size: 28px;
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 14px;
     }
 }
 
-/* Mobile Styles */
+/* Mobile Styles - Hamburger Menu */
 @media (max-width: 767px) {
-    .site-header {
-        padding: 15px 0;
+    .header-container {
+        padding: 24px 20px;
+        position: relative;
     }
     
-    .site-title {
+    /* Show hamburger menu on mobile */
+    .hamburger-menu {
+        display: flex;
+        position: absolute;
+        left: 20px;
+    }
+    
+    /* Center logo on mobile */
+    .header-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .logo-text {
         font-size: 20px;
+    }
+    
+    .logo-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Hide navigation by default on mobile */
+    .header-nav {
+        width: 100%;
+        position: fixed;
+        top: 95px;
+        left: 0;
+        width: 100%;
+        background: #10847E;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Show navigation when active */
+    .header-nav.active {
+        max-height: 500px;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+        padding: 10px 0;
+    }
+    
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        padding: 15px 20px;
+        font-size: 15px;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        opacity: 1;
     }
 }

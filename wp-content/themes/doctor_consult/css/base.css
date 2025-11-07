@@ -38,6 +38,11 @@ body {
   align-items: center;
 }
 
+/* Mobile Breadcrumb Wrapper */
+.mobile-breadcrumb-wrapper {
+  display: none; /* Hidden on desktop */
+}
+
 /* Custom Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -57,9 +62,22 @@ body {
   background: #94a3b8;
 }
 
-@media (max-width: 768px) {
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Show mobile breadcrumb on mobile devices */
+  .mobile-breadcrumb-wrapper {
+    width: 100%;
+    display: block;
+    margin: 24px 0;
+    padding: 0 16px;
+  }
+
   ::-webkit-scrollbar {
-    display: none
+    display: none;
   }
 
   ::-webkit-scrollbar-track {
@@ -69,5 +87,4 @@ body {
   ::-webkit-scrollbar-thumb {
     display: none;
   }
-
 }

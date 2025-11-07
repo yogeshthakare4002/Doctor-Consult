@@ -31,11 +31,19 @@ if ($is_hindi) {
     <li class="breadcrumb-item">
       <a href="<?php echo esc_url($home_url); ?>" class="breadcrumb-link"><?php echo esc_html($home_text); ?></a>
     </li>
-    <li class="breadcrumb-separator" aria-hidden="true">&gt;</li>
+    <li class="breadcrumb-separator" aria-hidden="true">
+      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.800049 0.800003L4.80005 4.8L0.800049 8.8" stroke="#30363C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </li>
     <li class="breadcrumb-item breadcrumb-current" aria-current="page">
       <span><?php echo esc_html($current_page); ?></span>
     </li>
-    <li class="breadcrumb-separator" aria-hidden="true">&gt;</li>
+    <li class="breadcrumb-separator" aria-hidden="true">
+      <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.800049 0.800003L4.80005 4.8L0.800049 8.8" stroke="#10847E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </li>
   </ol>
 </nav>
 
