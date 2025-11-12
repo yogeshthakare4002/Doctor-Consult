@@ -1,0 +1,21 @@
+/**
+ * Theme Name: PharmEasy Theme
+ * Theme URI: https://pharmeasy.in
+ * Author: PharmEasy
+ * Author URI: https://pharmeasy.in
+ * Description: A clean and modern WordPress theme for PharmEasy services
+ * Version: 3.0.0
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: pe-theme
+ */
+
+/**
+ * NOTE: All actual CSS styles are loaded from /css/ directory files:
+ * - base.css (reset, typography, main layout)
+ * - header.css (header styles)
+ * - footer.css (footer styles)
+ * - components/carousel.css (carousel components)
+ * 
+ * This file is required by WordPress for theme metadata only.
+ */
