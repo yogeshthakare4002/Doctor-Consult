@@ -12,8 +12,8 @@ if (!defined('ABSPATH')) {
 <div class="doctor-consult-page">
     <?php get_template_part('pages/doctor-consultation/components/header-navigation'); ?>
 
-    <?php get_template_part('pages/doctor-consultation/cards/doctor-consult-banner'); ?>
-    <?php get_template_part('pages/doctor-consultation/cards/trust-marker'); ?>
+    <?php get_template_part('pages/doctor-consultation/components/doctor-consult-banner'); ?>
+    <?php get_template_part('pages/doctor-consultation/components/trust-marker'); ?>
     <?php get_template_part('pages/doctor-consultation/cards/assurance-card-mobile'); ?>
     <?php get_template_part('pages/doctor-consultation/components/specialities-carousel'); ?>
     <?php get_template_part('pages/doctor-consultation/cards/online-consultation-promo-card'); ?>
@@ -38,7 +38,6 @@ if (!defined('ABSPATH')) {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 48px;
     align-items: center;
 }
 </style>

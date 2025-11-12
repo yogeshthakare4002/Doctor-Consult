@@ -36,6 +36,7 @@
 
 <style>
   .trust-marker{
+    width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -46,6 +46,7 @@
 
 <style>
   .doctor-consult-banner {
+    width: 100%;
   background: linear-gradient(135deg, #1A2B4D 0%, #2D4A6B 100%);
   position: relative;
   overflow: hidden;
