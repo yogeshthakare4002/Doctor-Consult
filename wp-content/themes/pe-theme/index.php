@@ -44,12 +44,12 @@ if (empty($custom_template_path)) {
                 </article>
 
                 <div class="mobile-breadcrumb-wrapper">
-                    <?php get_template_part('navigation/breadcrumb'); ?>
+                    <?php get_template_part('common-components/breadcrumb'); ?>
                 </div>
             <?php endwhile; ?>
         <?php else : ?>
             <div class="mobile-breadcrumb-wrapper">
-                <?php get_template_part('navigation/breadcrumb'); ?>
+                <?php get_template_part('common-components/breadcrumb'); ?>
             </div>
         <?php endif; ?>
     </div>

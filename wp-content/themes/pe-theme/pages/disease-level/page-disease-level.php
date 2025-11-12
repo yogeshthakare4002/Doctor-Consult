@@ -7,75 +7,10 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-
-$conditions = array(
-    array(
-        'name' => __('Diabetes Management', 'doctor-consult'),
-        'link' => home_url('/doctor-consultation'),
-        'icon' => get_template_directory_uri() . '/assets/images/healthcare.svg',
-    ),
-    array(
-        'name' => __('Cardiac Care', 'doctor-consult'),
-        'link' => home_url('/doctor-consultation'),
-        'icon' => get_template_directory_uri() . '/assets/images/doctor-availability.svg',
-    ),
-    array(
-        'name' => __('Skin & Hair', 'doctor-consult'),
-        'link' => home_url('/doctor-consultation'),
-        'icon' => get_template_directory_uri() . '/assets/images/doctor-3.svg',
-    ),
-    array(
-        'name' => __('Women’s Health', 'doctor-consult'),
-        'link' => home_url('/doctor-consultation'),
-        'icon' => get_template_directory_uri() . '/assets/images/doctor-2.svg',
-    ),
-    array(
-        'name' => __('Mental Wellness', 'doctor-consult'),
-        'link' => home_url('/doctor-consultation'),
-        'icon' => get_template_directory_uri() . '/assets/images/secure-session.svg',
-    ),
-    array(
-        'name' => __('Child Specialist', 'doctor-consult'),
-        'link' => home_url('/doctor-consultation'),
-        'icon' => get_template_directory_uri() . '/assets/images/doctor.svg',
-    ),
-);
-?>
-
-<?php
-get_template_part(
-    'pages/doctor-consultation/components/page-header',
-    null,
-    array(
-        'title' => get_the_title(),
-        'subtitle' => __('Browse health conditions and connect with the right specialist instantly.', 'doctor-consult'),
-    )
-);
 ?>
 
 <section class="disease-level-content">
-    <div class="conditions-grid">
-        <?php foreach ($conditions as $index => $condition) : ?>
-            <?php
-            set_query_var('item', $condition);
-            set_query_var('index', $index);
-            get_template_part('pages/doctor-consultation/cards/condition-card');
-            ?>
-        <?php endforeach; ?>
-        <?php
-        set_query_var('item', null);
-        set_query_var('index', null);
-        ?>
-    </div>
-
-    <?php get_template_part('pages/doctor-consultation/components/consult-info'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/faq-section'); ?>
-
-    <div class="mobile-breadcrumb-wrapper">
-        <?php get_template_part('navigation/breadcrumb'); ?>
-    </div>
-
-    <?php get_template_part('pages/doctor-consultation/components/brand-footer'); ?>
+    Disease Level
 </section>
 
 <style>

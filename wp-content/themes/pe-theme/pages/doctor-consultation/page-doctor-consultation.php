@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="doctor-consult-page">
-    <?php get_template_part('pages/doctor-consultation/components/header-navigation'); ?>
+    <?php get_template_part('pages/doctor-consultation/components/breadcrumb-header'); ?>
 
     <?php get_template_part('pages/doctor-consultation/components/doctor-consult-banner'); ?>
     <?php get_template_part('pages/doctor-consultation/components/trust-marker'); ?>
@@ -27,7 +27,7 @@ if (!defined('ABSPATH')) {
     <?php get_template_part('pages/doctor-consultation/components/reviews-section'); ?>
 
     <div class="mobile-breadcrumb-wrapper">
-        <?php get_template_part('navigation/breadcrumb'); ?>
+        <?php get_template_part('common-components/breadcrumb'); ?>
     </div>
 
     <?php get_template_part('pages/doctor-consultation/components/brand-footer'); ?>

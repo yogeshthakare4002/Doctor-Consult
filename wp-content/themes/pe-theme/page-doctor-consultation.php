@@ -12,8 +12,6 @@ get_header();
 ?>
 
 <main id="main" class="site-main doctor-consult-page">
-    <?php get_template_part('navigation/header-navigation'); ?>
-
     <div class="main-container">
         <?php get_template_part('pages/doctor-consultation/page-doctor-consultation'); ?>
     </div>
