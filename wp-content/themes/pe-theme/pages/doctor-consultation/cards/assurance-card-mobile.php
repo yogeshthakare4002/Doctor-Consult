@@ -27,17 +27,18 @@
 
   @media (max-width: 768px) {
     .assurance-card-mobile {
+      width: 90%;
       height: 92px;
       display: block;
       position: relative;
       border-radius: 16px;
-      margin: 16px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: space-between;
       flex-direction: row;
       gap: 12px;
       overflow: hidden;
+      margin : 0px 12px;
       margin-bottom: 24px;
     }
 

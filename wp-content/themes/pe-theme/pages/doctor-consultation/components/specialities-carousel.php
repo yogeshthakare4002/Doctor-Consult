@@ -102,7 +102,6 @@ echo render_carousel($specialities_data, $config);
     padding: 0 20px;
     max-width: 980px;
     margin: 0px auto;
-    margin-bottom: 64px;
 }
 
 .specialities-carousel .carousel-title {

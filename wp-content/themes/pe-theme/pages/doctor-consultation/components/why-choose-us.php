@@ -84,7 +84,6 @@ $features_data = array(
 <style>
   /* Why Choose Us Section */
   .why-choose-us-section {
-    margin: 24px 0;
     padding: 24px;
     max-width: 980px;
     width: 100%;

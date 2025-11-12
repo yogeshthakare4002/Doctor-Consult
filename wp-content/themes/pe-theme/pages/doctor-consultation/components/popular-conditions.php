@@ -117,7 +117,6 @@ echo render_carousel($conditions_data, $carousel_config);
 <style>
 /* Desktop Carousel View */
 .conditions-carousel-container {
-    margin: 60px 0;
     padding: 0 20px;
     max-width: 980px;
     margin-left: auto;

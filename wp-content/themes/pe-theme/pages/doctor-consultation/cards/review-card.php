@@ -55,7 +55,7 @@
   .review-text {
     margin: 0;
     font-family: Inter;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     color: #30363C;
     max-height: 80px;
@@ -95,6 +95,7 @@
     border-radius: 12px;
     padding: 4px 8px;
     color: #2F446B;
+    font-size: 11px;
     font-weight: 700;
   }
 

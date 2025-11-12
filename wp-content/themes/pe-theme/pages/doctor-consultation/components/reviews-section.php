@@ -76,7 +76,6 @@ $carousel_id = 'reviews-carousel-' . uniqid();
 <style>
 .reviews-section {
   max-width: 980px;
-  margin: 32px auto;
   border-radius: 16px;
   position: relative;
   padding: 24px;
@@ -123,7 +122,6 @@ $carousel_id = 'reviews-carousel-' . uniqid();
 .reviews-title {
   font-family: Inter;
   font-weight: 600;
-  font-style: Semi Bold;
   font-size: 22px;
   line-height: 28px;
   letter-spacing: 0;
@@ -207,7 +205,13 @@ $carousel_id = 'reviews-carousel-' . uniqid();
     border-radius: 0px;
    }
   .reviews-avatar-wrapper { width: 100px }
-  .reviews-header { flex-direction: column; align-items: flex-start; padding: 16px; gap: 8px; }
+  .reviews-header { 
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 16px; 
+    gap: 8px;
+    margin-bottom: 8px; 
+  }
   .reviews-title { font-size: 16px; line-height: 24px; }
   .reviews-quote-decor { left: 16px; top: 120px; font-size: 56px; }
   .reviews-desktop { display: none; }

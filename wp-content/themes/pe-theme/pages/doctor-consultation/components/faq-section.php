@@ -110,7 +110,6 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
 .faq-section {
   width: 100%;
   background-color: #FFFFFF;
-  padding: 48px 16px;
 }
 
 .faq-wrapper {
@@ -221,7 +220,7 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
   .faq-header-container {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 0px;
     gap: 0;
   }
 

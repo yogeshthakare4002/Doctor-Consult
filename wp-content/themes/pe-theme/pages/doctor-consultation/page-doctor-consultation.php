@@ -13,17 +13,19 @@ if (!defined('ABSPATH')) {
     <?php get_template_part('pages/doctor-consultation/components/breadcrumb-header'); ?>
     <?php get_template_part('pages/doctor-consultation/components/doctor-consult-hero-section'); ?>
     <?php get_template_part('pages/doctor-consultation/components/trust-marker'); ?>
-    <?php get_template_part('pages/doctor-consultation/cards/assurance-card-mobile'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/specialities-carousel'); ?>
-    <?php get_template_part('pages/doctor-consultation/cards/online-consultation-promo-card'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/doctor-profile-carousel'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/top-physician-horizontal-scroll'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/popular-conditions'); ?>
-    <?php get_template_part('pages/doctor-consultation/cards/booking-steps'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/consult-info'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/why-choose-us'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/faq-section'); ?>
-    <?php get_template_part('pages/doctor-consultation/components/reviews-section'); ?>
+    <div class="doctor-consult-content">
+        <?php get_template_part('pages/doctor-consultation/cards/assurance-card-mobile'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/specialities-carousel'); ?>
+        <?php get_template_part('pages/doctor-consultation/cards/online-consultation-promo-card'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/doctor-profile-carousel'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/popular-conditions'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/top-physician-horizontal-scroll'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/consult-info'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/why-choose-us'); ?>
+        <?php get_template_part('pages/doctor-consultation/cards/booking-steps'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/faq-section'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/reviews-section'); ?>
+    </div>
 
     <div class="mobile-breadcrumb-wrapper">
         <?php get_template_part('common-components/breadcrumb'); ?>
@@ -38,5 +40,19 @@ if (!defined('ABSPATH')) {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.doctor-consult-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .doctor-consult-content {
+        gap: 24px;
+    }
 }
 </style>

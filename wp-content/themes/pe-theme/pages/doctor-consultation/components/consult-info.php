@@ -79,7 +79,6 @@
 .consult-info-section {
   width: 100%;
   background-color: #FFFFFF;
-  padding: 40px 16px;
 }
 
 .consult-info-container {
@@ -109,7 +108,6 @@
 .info-title {
   font-family: Inter;
   font-weight: 600;
-  font-style: Semi Bold;
   font-size: 22px;
   line-height: 28px;
   letter-spacing: 0;

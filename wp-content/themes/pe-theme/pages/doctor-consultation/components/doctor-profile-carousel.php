@@ -131,7 +131,6 @@ echo render_carousel($doctors_data, $config);
 <style>
 /* Doctor Profile Carousel specific styles */
 .doctor-profile-carousel {
-    margin: 64px auto;
     padding: 0 20px;
     max-width: 980px;
 }

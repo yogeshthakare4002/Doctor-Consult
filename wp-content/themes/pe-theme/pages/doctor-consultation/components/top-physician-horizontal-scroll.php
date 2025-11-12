@@ -106,7 +106,6 @@ $physicians_data = array(
 <style>
   /* Doctor Consultation Component Styles */
   .doctor-consultation-component {
-    margin: 40px 0;
     padding: 0 20px;
     max-width: 980px;
     margin-left: auto;
