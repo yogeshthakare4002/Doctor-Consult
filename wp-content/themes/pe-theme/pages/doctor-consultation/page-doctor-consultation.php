@@ -11,8 +11,7 @@ if (!defined('ABSPATH')) {
 
 <div class="doctor-consult-page">
     <?php get_template_part('pages/doctor-consultation/components/breadcrumb-header'); ?>
-
-    <?php get_template_part('pages/doctor-consultation/components/doctor-consult-banner'); ?>
+    <?php get_template_part('pages/doctor-consultation/components/doctor-consult-hero-section'); ?>
     <?php get_template_part('pages/doctor-consultation/components/trust-marker'); ?>
     <?php get_template_part('pages/doctor-consultation/cards/assurance-card-mobile'); ?>
     <?php get_template_part('pages/doctor-consultation/components/specialities-carousel'); ?>
