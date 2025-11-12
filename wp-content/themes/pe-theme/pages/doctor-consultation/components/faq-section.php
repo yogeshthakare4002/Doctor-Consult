@@ -4,6 +4,8 @@
  * Displays frequently asked questions with different layouts for desktop and mobile
  */
 
+require_once get_template_directory() . '/common-components/dropdown.php';
+
 // Fetch FAQ data from database
 global $wpdb;
 
@@ -47,7 +49,7 @@ if ($faq_results) {
     }
 }
 
-$default_open_index = 1; // 0-based index for which item should be open by default on mobile
+$default_open_index = 0; // 0-based index for which item should be open by default on mobile
 ?>
 
 <section class="faq-section">
@@ -78,24 +80,40 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
     <!-- Mobile Layout (Accordion style) -->
     <div class="faq-mobile-layout">
       <?php foreach ($faqs as $index => $faq): ?>
-        <div class="faq-mobile-item <?php echo ($index === $default_open_index) ? 'active' : ''; ?>" data-faq-index="<?php echo $index; ?>">
-          <button class="faq-mobile-question" aria-expanded="<?php echo ($index === $default_open_index) ? 'true' : 'false'; ?>">
-            <span class="faq-question-text">Q. <?php echo esc_html($faq['question']); ?></span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 7.5L10 12.5L15 7.5" stroke="#30363C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="faq-mobile-answer-wrapper">
-            <?php if ($faq['is_list']): ?>
-              <div class="faq-mobile-answer"><?php echo $faq['answer']; ?></div>
-            <?php else: ?>
-              <p class="faq-mobile-answer"><?php echo esc_html($faq['answer']); ?></p>
-            <?php endif; ?>
-          </div>
-          <?php if ($index < count($faqs) - 1): ?>
-            <div class="faq-mobile-divider"></div>
-          <?php endif; ?>
-        </div>
+        <?php
+          $is_active = ($index === $default_open_index);
+          $icon_svg = '<svg class="faq-chevron pe-dropdown-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="#30363C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          $content_settings = array(
+            'content_text'    => $faq['answer'],
+            'content_is_html' => false,
+            'answer_tag'      => 'p',
+          );
+
+          if ($faq['is_list']) {
+              $content_settings['content_text'] = $faq['answer'];
+              $content_settings['content_is_html'] = true;
+              $content_settings['answer_tag'] = 'div';
+          }
+
+          pe_render_common_dropdown(array_merge(
+              array(
+                  'title_text'           => 'Q. ' . $faq['question'],
+                  'item_class'           => 'faq-mobile-item',
+                  'item_attributes'      => array('data-faq-index' => $index),
+                  'button_class'         => 'faq-mobile-question',
+                  'title_wrapper_tag'    => 'span',
+                  'title_wrapper_class'  => 'faq-question-text',
+                  'icon_html'            => $icon_svg,
+                  'is_active'            => $is_active,
+                  'answer_wrapper_class' => 'faq-mobile-answer-wrapper',
+                  'answer_class'         => 'faq-mobile-answer',
+                  'show_divider'         => ($index < count($faqs) - 1),
+                  'divider_class'        => 'faq-mobile-divider',
+                  'group_id'             => 'faq-mobile-accordion',
+              ),
+              $content_settings
+          ));
+        ?>
       <?php endforeach; ?>
     </div>
 
@@ -133,16 +151,6 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
   color: #30363C;
   margin: 0;
   position: relative;
-}
-
-.faq-main-title::after {
-  content: '';
-  position: absolute;
-  right: -100%;
-  top: 50%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, #C8E6F5 0%, transparent 100%);
 }
 
 .faq-help-button {
@@ -225,14 +233,24 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
   }
 
   .faq-main-title {
-    font-size: 22px;
-    line-height: 30px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
     margin-bottom: 24px;
   }
 
-  .faq-main-title::after {
-    display: none;
-  }
+ .faq-main-title::after {
+  content: '';
+  position: absolute;
+  right: -100%;
+  top: 50%;
+  margin-left: 8px;
+  width: 95%;
+  height: 1.5px;
+  background: linear-gradient(to right, #C8E6F5 0%, transparent 100%);
+}
 
   .faq-desktop-layout {
     display: none;
@@ -270,12 +288,13 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
   }
 
   .faq-question-text {
-    font-family: Inter, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
     color: #30363C;
     flex: 1;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0;
   }
 
   .faq-chevron {
@@ -299,13 +318,14 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
   }
 
   .faq-mobile-answer {
-    font-family: Inter, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
     color: #4F585E;
     margin: 0;
     padding: 0 0 16px 0;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
   }
 
   .faq-mobile-divider {
@@ -320,34 +340,3 @@ $default_open_index = 1; // 0-based index for which item should be open by defau
 }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Mobile accordion functionality
-  const faqMobileItems = document.querySelectorAll('.faq-mobile-item');
-  
-  faqMobileItems.forEach(function(item) {
-    const questionButton = item.querySelector('.faq-mobile-question');
-    
-    questionButton.addEventListener('click', function() {
-      const isActive = item.classList.contains('active');
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      
-      if (isActive) {
-        // Close current item
-        item.classList.remove('active');
-        this.setAttribute('aria-expanded', 'false');
-      } else {
-        // Close all other items
-        faqMobileItems.forEach(function(otherItem) {
-          otherItem.classList.remove('active');
-          otherItem.querySelector('.faq-mobile-question').setAttribute('aria-expanded', 'false');
-        });
-        
-        // Open clicked item
-        item.classList.add('active');
-        this.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-});
-</script>

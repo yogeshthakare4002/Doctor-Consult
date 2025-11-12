@@ -115,7 +115,7 @@ $features_data = array(
   .title-accent {
     width: 200px;
     height: 2px;
-    background: linear-gradient(270deg, #ACE0FF 1.84%, rgba(220, 228, 241, 0) 93.75%);
+    background: linear-gradient(90deg, #ACE0FF 1.84%, rgba(220, 228, 241, 0) 93.75%);
   }
 
   /* Desktop Layout */

@@ -73,7 +73,6 @@ class Carousel {
         // Use the configured card width directly instead of calculating from container
         const itemWidth = `${cardWidth}px`;
         
-        console.log('Container:', containerWidth, 'Items that fit:', itemsPerView, 'Total items:', this.items.length);
         this.items.forEach(item => {
             item.style.flex = `0 0 ${itemWidth}`;
             item.style.maxWidth = itemWidth;
@@ -319,7 +318,6 @@ function initializeCarousels(id, carousel_config) {
     }
 
     try {
-        console.log('Initializing carousel for ID:', id, 'with config:', carousel_config);
         new Carousel(carouselContainer, carousel_config);
     } catch (error) {
         console.error('Carousel: Error creating carousel for', id, ':', error);
