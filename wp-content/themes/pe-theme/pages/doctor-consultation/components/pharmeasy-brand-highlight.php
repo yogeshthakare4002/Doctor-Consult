@@ -1,6 +1,6 @@
 <?php
 /**
- * Brand Footer Component
+ * PharmEasy Brand Highlight Component
  * PharmEasy branding section with trust markers and services
  */
 
@@ -52,50 +52,49 @@ $services = array(
 );
 ?>
 
-<section class="brand-footer-section">
+<section class="pharmeasy-brand-highlight">
     <!-- Brand Header -->
-    <div class="brand-header">
-        <div class="brand-logo">
-            <!-- <span class="brand-name">PharmEasy</span> -->
-             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="pharmeasy-logo-icon" />
+    <div class="pharmeasy-brand-highlight__header">
+        <div class="pharmeasy-brand-highlight__logo">
+             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="pharmeasy-brand-highlight__logo-image" />
         </div>
-        <p class="brand-tagline"># ONE OF INDIA'S MOST TRUSTED HEALTHCARE PLATFORM</p>
-        <h2 class="brand-heading">Making quality healthcare easy and accessible</h2>
+        <p class="pharmeasy-brand-highlight__tagline"># ONE OF INDIA'S MOST TRUSTED HEALTHCARE PLATFORM</p>
+        <h2 class="pharmeasy-brand-highlight__heading">Making quality healthcare easy and accessible</h2>
     </div>
 
     <!-- Trust Markers -->
-    <div class="trust-markers">
+    <div class="pharmeasy-brand-highlight__trust-markers">
         <?php foreach ($trust_markers as $marker): ?>
-            <div class="trust-marker">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon left-leaf" />
-                <div class="trust-content">
-                    <div class="trust-title"><?php echo esc_html($marker['title']); ?></div>
-                    <div class="trust-subtitle"><?php echo esc_html($marker['subtitle']); ?></div>
+            <div class="pharmeasy-brand-highlight__trust-marker">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="pharmeasy-brand-highlight__leaf-icon pharmeasy-brand-highlight__leaf-icon--left" />
+                <div class="pharmeasy-brand-highlight__trust-content">
+                    <div class="pharmeasy-brand-highlight__trust-title"><?php echo esc_html($marker['title']); ?></div>
+                    <div class="pharmeasy-brand-highlight__trust-subtitle"><?php echo esc_html($marker['subtitle']); ?></div>
                 </div>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="right leaf" class="leaf-icon right-leaf" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="right leaf" class="pharmeasy-brand-highlight__leaf-icon pharmeasy-brand-highlight__leaf-icon--right" />
             </div>
         <?php endforeach; ?>
     </div>
 
     <!-- Services Divider -->
-    <div class="services-divider">
-        <div class="divider-line"></div>
-        <div class="divider-content">
-          <span class="divider-text desktop-divider">PharmEasy Other services</span>    
-          <span class="divider-text mobile-divider">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="divider-logo-icon" /> 
-            <span class="divider-text-mobile">Other services</span>
+    <div class="pharmeasy-brand-highlight__divider">
+        <div class="pharmeasy-brand-highlight__divider-line"></div>
+        <div class="pharmeasy-brand-highlight__divider-content">
+          <span class="pharmeasy-brand-highlight__divider-text pharmeasy-brand-highlight__divider-text--desktop">PharmEasy Other services</span>    
+          <span class="pharmeasy-brand-highlight__divider-text pharmeasy-brand-highlight__divider-text--mobile">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="pharmeasy-brand-highlight__divider-logo" /> 
+            <span class="pharmeasy-brand-highlight__divider-label">Other services</span>
           </span>
         </div>
-        <div class="divider-line line-right-divider"></div>
+        <div class="pharmeasy-brand-highlight__divider-line pharmeasy-brand-highlight__divider-line--right"></div>
     </div>
 
     <!-- Services Grid -->
-    <div class="services-grid">
+    <div class="pharmeasy-brand-highlight__services">
         <?php foreach ($services as $service): ?>
-            <div class="service-card">
-                <div class="service-name"><?php echo esc_html($service['name']); ?></div>
-                <div class="service-icon">
+            <div class="pharmeasy-brand-highlight__service-card">
+                <div class="pharmeasy-brand-highlight__service-name"><?php echo esc_html($service['name']); ?></div>
+                <div class="pharmeasy-brand-highlight__service-icon">
                     <img src="<?php echo esc_url($service['icon']); ?>" alt="<?php echo esc_attr($service['name']); ?>" />
                 </div>
             </div>
@@ -104,28 +103,29 @@ $services = array(
 </section>
 
 <style>
-/* Brand Footer Section */
-.brand-footer-section {
+/* PharmEasy Brand Highlight Section */
+.pharmeasy-brand-highlight {
     max-width: 980px;
     width: 100%;
     margin: 0 auto;
     border-radius: 16px;
     border: 2px solid #E6EBF4;
     padding: 40px 16px;
+    margin-top: 40px;
 }
 
 /* Brand Header */
-
-.pharmeasy-logo-icon{
+.pharmeasy-brand-highlight__logo-image {
     width: 331px;
     height: 64px;
 }
-.brand-header {
+
+.pharmeasy-brand-highlight__header {
     text-align: center;
     margin-bottom: 36px;
 }
 
-.brand-logo {
+.pharmeasy-brand-highlight__logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,7 +133,7 @@ $services = array(
     margin-bottom: 24px;
 }
 
-.brand-tagline {
+.pharmeasy-brand-highlight__tagline {
     font-family: Inter;
     font-weight: 600;
     font-style: Semi Bold;
@@ -147,7 +147,7 @@ $services = array(
     margin-bottom: 24px;
 }
 
-.brand-heading {
+.pharmeasy-brand-highlight__heading {
     font-family: Inter;
     font-weight: 700;
     font-style: Bold;
@@ -160,7 +160,7 @@ $services = array(
 }
 
 /* Trust Markers */
-.trust-markers {
+.pharmeasy-brand-highlight__trust-markers {
     display: flex;
     justify-content: center;
     gap: 60px;
@@ -168,26 +168,26 @@ $services = array(
     display: none;
 }
 
-.trust-markers .trust-marker {
+.pharmeasy-brand-highlight__trust-marker {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
 }
 
-.trust-markers .trust-marker .leaf-icon{
+.pharmeasy-brand-highlight__leaf-icon {
     height: 32px;
 }
 
-.trust-marker .right-leaf{
+.pharmeasy-brand-highlight__leaf-icon--right {
     transform: scaleX(-1);
 }
 
-.trust-content {
+.pharmeasy-brand-highlight__trust-content {
     text-align: center;
 }
 
-.trust-title {
+.pharmeasy-brand-highlight__trust-title {
     font-family: Inter;
     font-weight: 700;
     font-size: 16px;
@@ -195,7 +195,7 @@ $services = array(
     margin-bottom: 4px;
 }
 
-.trust-subtitle {
+.pharmeasy-brand-highlight__trust-subtitle {
     font-family: Inter;
     font-weight: 400;
     font-size: 12px;
@@ -203,7 +203,7 @@ $services = array(
 }
 
 /* Services Divider */
-.services-divider {
+.pharmeasy-brand-highlight__divider {
     position: relative;
     margin-bottom: 32px;
     display: flex;
@@ -212,39 +212,34 @@ $services = array(
     justify-content: center;
 }
 
-.divider-line {
+.pharmeasy-brand-highlight__divider-line {
     width: 300px;
     height: 1px;
     background: linear-gradient(270deg, #EDF2F9 0%, rgba(98, 191, 159, 0) 100%);
 }
 
-.line-right-divider{
+.pharmeasy-brand-highlight__divider-line--right {
     transform: rotate(180deg);
     background: linear-gradient(270deg, #EDF2F9 0%, rgba(98, 191, 159, 0) 100%);
 }
 
-.divider-content {
+.pharmeasy-brand-highlight__divider-content {
     padding: 0 20px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.divider-content .mobile-divider{
+.pharmeasy-brand-highlight__divider-text--mobile {
     display: none;
 }
 
-.divider-content .pharmeasy-logo-icon{
+.pharmeasy-brand-highlight__divider-content .pharmeasy-brand-highlight__logo-image {
     width: 331px;
     height: 64px;
 }
 
-.divider-icon {
-    width: 20px;
-    height: 20px;
-}
-
-.divider-text {
+.pharmeasy-brand-highlight__divider-text {
     font-family: Inter;
     font-weight: 600;
     font-style: Semi Bold;
@@ -255,7 +250,7 @@ $services = array(
 }
 
 /* Services Grid */
-.services-grid {
+.pharmeasy-brand-highlight__services {
    display: flex;
    flex-direction: row;
    align-items: center;
@@ -263,7 +258,7 @@ $services = array(
    gap: 40px;
 }
 
-.service-card {
+.pharmeasy-brand-highlight__service-card {
     background: linear-gradient(154.96deg, #FFFFFF 27.38%, #EBF2FF 81.34%),
     linear-gradient(154.96deg, #FFFFFF 27.38%, #EBF2FF 81.34%);
     border: 1.5px solid #DCE4F1;
@@ -279,7 +274,7 @@ $services = array(
     padding-bottom: 0;
 }
 
-.service-name {
+.pharmeasy-brand-highlight__service-name {
     font-family: Inter;
     font-weight: 600;
     font-style: Semi Bold;
@@ -290,14 +285,14 @@ $services = array(
     color: #30363C;
 }
 
-.service-icon {
+.pharmeasy-brand-highlight__service-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-.service-icon img {
+.pharmeasy-brand-highlight__service-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -305,62 +300,63 @@ $services = array(
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .brand-footer-section {
+    .pharmeasy-brand-highlight {
         padding: 40px 16px;
         border-radius: 12px;
         border: none;
         background: linear-gradient(180deg, #F2FFF8 0%, rgba(242, 255, 248, 0) 100%),
 linear-gradient(0deg, #F4F8FF, #F4F8FF);
+        margin-top: 0px;
     }
 
-    .pharmeasy-logo-icon{
+    .pharmeasy-brand-highlight__logo-image{
         width: 207px;
         height: 40px;
     }
 
-    .brand-header {
+    .pharmeasy-brand-highlight__header {
         text-align: center;
         margin-bottom: 36px;
     }
 
-    .brand-logo {
+    .pharmeasy-brand-highlight__logo {
         align-items: flex-start;
         justify-content: flex-start;
         margin-bottom: 12px;
     }
 
-    .brand-tagline {
+    .pharmeasy-brand-highlight__tagline {
         font-size: 10px;
         line-height: 16px;
         text-align: left;
         margin-bottom: 12px;
     }
 
-    .brand-heading {
+    .pharmeasy-brand-highlight__heading {
         font-size: 20px;
         line-height: 28px;
         text-align: left;
         margin-bottom: 12px;
     }
 
-    .trust-markers {
+    .pharmeasy-brand-highlight__trust-markers {
         display: flex;
         flex-direction: row;
         gap: 6px;
         margin-bottom: 32px;
     }
 
-    .trust-markers .trust-marker {
+    .pharmeasy-brand-highlight__trust-marker {
         flex-direction: row;
         text-align: left;
         gap: 1px;
     }
 
-    .trust-content {
+    .pharmeasy-brand-highlight__trust-content {
         text-align: left;
     }
 
-    .trust-title {
+    .pharmeasy-brand-highlight__trust-title {
         font-family: Inter;
         font-weight: 700;
         font-style: Bold;
@@ -372,7 +368,7 @@ linear-gradient(0deg, #F4F8FF, #F4F8FF);
         margin-bottom: 0px;
     }
 
-    .trust-subtitle {
+    .pharmeasy-brand-highlight__trust-subtitle {
         font-family: Inter;
         font-weight: 500;
         font-style: Medium;
@@ -384,35 +380,35 @@ linear-gradient(0deg, #F4F8FF, #F4F8FF);
         margin-bottom: 5px;
     }
 
-    .services-divider {
+    .pharmeasy-brand-highlight__divider {
         margin-bottom: 24px;
     }
 
-    .divider-content {
+    .pharmeasy-brand-highlight__divider-content {
         padding: 0;
         flex-direction: row;
         gap: 8px;
     }
 
-    .divider-content .mobile-divider{
+    .pharmeasy-brand-highlight__divider-text--mobile{
         display: flex;
         gap: 4px;
     }
 
-    .divider-content .desktop-divider{
+    .pharmeasy-brand-highlight__divider-text--desktop{
         display: none;
     }
 
-    .divider-line {
+    .pharmeasy-brand-highlight__divider-line {
         width: 50px;
     }
 
-    .divider-logo-icon{
+    .pharmeasy-brand-highlight__divider-logo{
         width: 82px;
         height: 16px;
     }
 
-    .divider-text {
+    .pharmeasy-brand-highlight__divider-text {
         font-family: Inter;
         font-weight: 600;
         font-style: Semi Bold;
@@ -422,19 +418,19 @@ linear-gradient(0deg, #F4F8FF, #F4F8FF);
         margin-bottom: 0px;
     }
 
-    .services-grid {
+    .pharmeasy-brand-highlight__services {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
         max-width: 100%;
     }
 
-    .service-card {
+    .pharmeasy-brand-highlight__service-card {
         padding: 5px;
         padding-bottom: 0;
     }
 
-    .service-name {
+    .pharmeasy-brand-highlight__service-name {
         font-family: Inter;
         font-weight: 600;
         font-style: Semi Bold;
@@ -445,7 +441,7 @@ linear-gradient(0deg, #F4F8FF, #F4F8FF);
         margin-bottom: 5px;
     }
 
-    .service-icon img {
+    .pharmeasy-brand-highlight__service-icon img {
         width: 100%;
         height: 100%;
     }

@@ -13,6 +13,7 @@ if (!defined('ABSPATH')) {
     <?php get_template_part('pages/doctor-consultation/components/breadcrumb-header'); ?>
     <?php get_template_part('pages/doctor-consultation/components/doctor-consult-hero-section'); ?>
     <?php get_template_part('pages/doctor-consultation/components/trust-marker'); ?>
+
     <div class="doctor-consult-content">
         <?php get_template_part('pages/doctor-consultation/cards/assurance-card-mobile'); ?>
         <?php get_template_part('pages/doctor-consultation/components/specialities-carousel'); ?>
@@ -31,7 +32,8 @@ if (!defined('ABSPATH')) {
         <?php get_template_part('common-components/breadcrumb'); ?>
     </div>
 
-    <?php get_template_part('pages/doctor-consultation/components/brand-footer'); ?>
+    <?php get_template_part('pages/doctor-consultation/components/pharmeasy-brand-highlight'); ?>
+
 </div>
 
 <style>
