@@ -239,15 +239,16 @@ $default_open_index = 0; // 0-based index for which item should be open by defau
     line-height: 24px;
     letter-spacing: 0;
     margin-bottom: 24px;
+    width: 100%;
   }
 
  .faq-main-title::after {
   content: '';
   position: absolute;
-  right: -100%;
+  right: 0px;
   top: 50%;
   margin-left: 8px;
-  width: 95%;
+  width: 20%;
   height: 1.5px;
   background: linear-gradient(to right, #C8E6F5 0%, transparent 100%);
 }
