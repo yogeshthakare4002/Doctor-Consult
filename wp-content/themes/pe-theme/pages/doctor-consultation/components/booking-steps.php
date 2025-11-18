@@ -10,31 +10,31 @@ $booking_steps = array(
         'number' => '1',
         'title' => 'Select your health concern',
         'description' => 'Choose a speciality that best suits your needs',
-        'icon' => get_template_directory_uri() . '/assets/images/doctor.svg'
+        'icon' => get_template_directory_uri() . '/assets/images/step1.svg'
     ),
     array(
         'number' => '2',
         'title' => 'Choose the doctor',
         'description' => 'Choose a doctor from our list of specialists.',
-        'icon' => get_template_directory_uri() . '/assets/images/doctor-2.svg'
+        'icon' => get_template_directory_uri() . '/assets/images/step2.svg'
     ),
     array(
         'number' => '3',
         'title' => 'Select your preferred slot',
         'description' => 'Choose a time that works best for you',
-        'icon' => get_template_directory_uri() . '/assets/images/doctor.svg'
+        'icon' => get_template_directory_uri() . '/assets/images/step3.svg'
     ),
     array(
         'number' => '4',
         'title' => 'Connect via video/audio call',
         'description' => 'Join the consultation easily from your device.',
-        'icon' => get_template_directory_uri() . '/assets/images/doctor-2.svg'
+        'icon' => get_template_directory_uri() . '/assets/images/step4.svg'
     ),
     array(
         'number' => '5',
         'title' => 'Get e-prescription instantly',
         'description' => 'Receive your prescription right after the call.',
-        'icon' => get_template_directory_uri() . '/assets/images/doctor.svg'
+        'icon' => get_template_directory_uri() . '/assets/images/step5.svg'
     )
 );
 ?>

@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
         <?php get_template_part('pages/doctor-consultation/components/top-physician-horizontal-scroll'); ?>
         <?php get_template_part('pages/doctor-consultation/components/consult-info'); ?>
         <?php get_template_part('pages/doctor-consultation/components/why-choose-us'); ?>
-        <?php get_template_part('pages/doctor-consultation/cards/booking-steps'); ?>
+        <?php get_template_part('pages/doctor-consultation/components/booking-steps'); ?>
         <?php get_template_part('pages/doctor-consultation/components/faq-section'); ?>
         <?php get_template_part('pages/doctor-consultation/components/reviews-section'); ?>
     </div>
