@@ -8,7 +8,7 @@
 <div class="carousel-card default-card">
     <?php if (!empty($item['image'])): ?>
         <div class="card-image">
-            <img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title'] ?? ''); ?>" />
+            <img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title'] ?? ''); ?>" width=50 height=50/>
         </div>
     <?php endif; ?>
     

@@ -11,7 +11,7 @@
     <!-- Section 1: Why consult doctor online -->
     <div class="info-item">
       <div class="info-header">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/why-consult-doctor.svg" alt="List icon" class="info-icon"/>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/why-consult-doctor.svg" alt="List icon" class="info-icon" width=20 height=20 />
         <h2 class="info-title">Why consult doctor online?</h2>
       </div>
       <div class="info-content">
@@ -45,7 +45,7 @@
     <!-- Section 2: When should you see a doctor -->
     <div class="info-item">
       <div class="info-header">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/when-should-see-doctor.svg" alt="Alert icon" class="info-icon"/>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/when-should-see-doctor.svg" alt="Alert icon" class="info-icon" width=20 height=20 />
         <h2 class="info-title">When should you see a doctor?</h2>
       </div>
       <div class="info-content">

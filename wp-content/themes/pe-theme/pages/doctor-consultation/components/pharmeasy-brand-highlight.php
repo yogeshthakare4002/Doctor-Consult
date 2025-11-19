@@ -56,22 +56,23 @@ $services = array(
     <!-- Brand Header -->
     <div class="pharmeasy-brand-highlight__header">
         <div class="pharmeasy-brand-highlight__logo">
-             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="pharmeasy-brand-highlight__logo-image" />
+             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="pharmeasy-brand-highlight__logo-image" width=70 height=64 />
+             <p class="pharmeasy-logo-title">PharmEasy</p>
         </div>
         <p class="pharmeasy-brand-highlight__tagline"># ONE OF INDIA'S MOST TRUSTED HEALTHCARE PLATFORM</p>
-        <h2 class="pharmeasy-brand-highlight__heading">Making quality healthcare easy and accessible</h2>
+        <p class="pharmeasy-brand-highlight__heading">Making quality healthcare easy and accessible</p>
     </div>
 
     <!-- Trust Markers -->
     <div class="pharmeasy-brand-highlight__trust-markers">
         <?php foreach ($trust_markers as $marker): ?>
             <div class="pharmeasy-brand-highlight__trust-marker">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="pharmeasy-brand-highlight__leaf-icon pharmeasy-brand-highlight__leaf-icon--left" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="pharmeasy-brand-highlight__leaf-icon pharmeasy-brand-highlight__leaf-icon--left" width=20 height=32 />
                 <div class="pharmeasy-brand-highlight__trust-content">
                     <div class="pharmeasy-brand-highlight__trust-title"><?php echo esc_html($marker['title']); ?></div>
                     <div class="pharmeasy-brand-highlight__trust-subtitle"><?php echo esc_html($marker['subtitle']); ?></div>
                 </div>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="right leaf" class="pharmeasy-brand-highlight__leaf-icon pharmeasy-brand-highlight__leaf-icon--right" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="right leaf" class="pharmeasy-brand-highlight__leaf-icon pharmeasy-brand-highlight__leaf-icon--right" width=20 height=32  />
             </div>
         <?php endforeach; ?>
     </div>
@@ -82,7 +83,8 @@ $services = array(
         <div class="pharmeasy-brand-highlight__divider-content">
           <span class="pharmeasy-brand-highlight__divider-text pharmeasy-brand-highlight__divider-text--desktop">PharmEasy Other services</span>    
           <span class="pharmeasy-brand-highlight__divider-text pharmeasy-brand-highlight__divider-text--mobile">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="pharmeasy-brand-highlight__divider-logo" /> 
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/pharmeasy-logo.svg" alt="PharmEasy Logo" class="pharmeasy-brand-highlight__divider-logo" width=20 height=16 /> 
+            <span class="pharmeasy-brand-highlight__divider-pharmeasy-label">PharmEasy</span>
             <span class="pharmeasy-brand-highlight__divider-label">Other services</span>
           </span>
         </div>
@@ -95,7 +97,7 @@ $services = array(
             <div class="pharmeasy-brand-highlight__service-card">
                 <div class="pharmeasy-brand-highlight__service-name"><?php echo esc_html($service['name']); ?></div>
                 <div class="pharmeasy-brand-highlight__service-icon">
-                    <img src="<?php echo esc_url($service['icon']); ?>" alt="<?php echo esc_attr($service['name']); ?>" />
+                    <img src="<?php echo esc_url($service['icon']); ?>" alt="<?php echo esc_attr($service['name']); ?>"  width=75 height=65 />
                 </div>
             </div>
         <?php endforeach; ?>
@@ -116,7 +118,7 @@ $services = array(
 
 /* Brand Header */
 .pharmeasy-brand-highlight__logo-image {
-    width: 331px;
+    width: 70px;
     height: 64px;
 }
 
@@ -129,8 +131,15 @@ $services = array(
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 5px;
     margin-bottom: 24px;
+}
+
+.pharmeasy-logo-title{
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 40px;
+    color: #10847E
 }
 
 .pharmeasy-brand-highlight__tagline {
@@ -235,7 +244,7 @@ $services = array(
 }
 
 .pharmeasy-brand-highlight__divider-content .pharmeasy-brand-highlight__logo-image {
-    width: 331px;
+    width: 70px;
     height: 64px;
 }
 
@@ -309,8 +318,12 @@ linear-gradient(0deg, #F4F8FF, #F4F8FF);
         margin-top: 0px;
     }
 
+    .pharmeasy-logo-title{
+        font-size: 30px;
+    }
+
     .pharmeasy-brand-highlight__logo-image{
-        width: 207px;
+        width: 35px;
         height: 40px;
     }
 
@@ -404,8 +417,15 @@ linear-gradient(0deg, #F4F8FF, #F4F8FF);
     }
 
     .pharmeasy-brand-highlight__divider-logo{
-        width: 82px;
+        width: 20px;
         height: 16px;
+    }
+
+    .pharmeasy-brand-highlight__divider-pharmeasy-label{
+        font-weight: 600;
+        font-style: Semi Bold;
+        font-size: 14px;
+        color: #10847E
     }
 
     .pharmeasy-brand-highlight__divider-text {

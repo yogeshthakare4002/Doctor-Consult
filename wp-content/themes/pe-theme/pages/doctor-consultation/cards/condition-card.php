@@ -12,7 +12,7 @@ $index = $index ?? 0;
 <div class="condition-card" data-index="<?php echo esc_attr($index); ?>" onclick="window.location.href='<?php echo esc_url($condition['link'] ?? '#'); ?>'">
     <div class="condition-icon">
         <img src="<?php echo esc_url($condition['icon'] ?? get_template_directory_uri() . '/assets/images/doctor.svg'); ?>" 
-             alt="<?php echo esc_attr($condition['name'] ?? 'Condition'); ?>" />
+             alt="<?php echo esc_attr($condition['name'] ?? 'Condition'); ?>" width=95 height=62 />
     </div>
     <p class="condition-name"><?php echo esc_html($condition['name'] ?? 'Condition'); ?></p>
 </div>

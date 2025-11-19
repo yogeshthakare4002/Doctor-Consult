@@ -87,17 +87,17 @@ $physicians_data = array(
           <span class="original-price">₹499</span>
         </div>
         <div class="cashback-info">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/curve.svg" alt="curve icon" class="curve-icon" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/curve.svg" alt="curve icon" class="curve-icon" width=10 height=10 />
           <span class="cashback-text">Get 5% cashback with</span>
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plus.svg" alt="plus icon" class="plus-icon" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/plus.svg" alt="plus icon" class="plus-icon" width=10 height=10  />
         </div>
       </div>
 
       <button class="consult-now-button" onclick="window.location.href='#consultation'">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/consult-btn-bg.svg" alt="consult now button background"
-          class="consult-now-button-bg" />
+          class="consult-now-button-bg" width=150 height=48 />
         <span class="button-text">Consult now</span>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flash.svg" alt="flash icon" class="flash-icon" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flash.svg" alt="flash icon" class="flash-icon" width=10 height=10 />
       </button>
     </div>
   </div>

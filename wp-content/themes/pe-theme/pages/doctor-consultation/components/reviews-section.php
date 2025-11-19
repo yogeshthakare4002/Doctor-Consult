@@ -23,8 +23,8 @@ $carousel_id = 'reviews-carousel-' . uniqid();
   <div class="reviews-header">
     <div class="reviews-header-left">
       <div class="reviews-avatar-wrapper">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor.svg" alt="users" class="reviews-avatar" />
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor.svg" alt="users" class="reviews-avatar avatar-two" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor.svg" alt="users" class="reviews-avatar" width=40 height=40 />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor.svg" alt="users" class="reviews-avatar avatar-two" width=40 height=40 />
       </div>
       <h2 class="reviews-title">10+ Million Happy Users <span class="muted">with online consultation</span></h2>
     </div>
@@ -38,7 +38,7 @@ $carousel_id = 'reviews-carousel-' . uniqid();
     </div>
   </div>
 
-  <img aria-hidden="true" src="<?php echo get_template_directory_uri(); ?>/assets/images/quote.svg" alt="quote" class="reviews-quote-decor" />
+  <img aria-hidden="true" src="<?php echo get_template_directory_uri(); ?>/assets/images/quote.svg" alt="quote" class="reviews-quote-decor" width=40 height=40 />
 
   <!-- Desktop Carousel -->
   <div class="reviews-desktop">

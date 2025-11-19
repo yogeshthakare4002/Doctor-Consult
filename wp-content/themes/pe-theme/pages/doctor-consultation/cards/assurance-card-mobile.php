@@ -8,16 +8,16 @@
 <section class="assurance-card-mobile">
   <div class="card-content">
     <div class="feature-item">
-      <img class="feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/secure-session.svg" alt="Verified Doctors Icon" />
+      <img class="feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/secure-session.svg" alt="Verified Doctors Icon" width=50 height=50 />
       <span class="feature-text">Private and Secure sessions</span>
     </div>
     <div class="feature-item">
-      <img class="feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/follow-up.svg" alt="Free Follow Up Icon" />
+      <img class="feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/follow-up.svg" alt="Free Follow Up Icon" width=50 height=50 />
       <span class="feature-text">Free follow up & Cancellation</span>
     </div>
   </div>
 
-  <img class="doctor-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor-2.svg" alt="Certified Doctors Icon" />
+  <img class="doctor-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor-2.svg" alt="Certified Doctors Icon" width=50 height=50 />
 </section>
 
 <style>

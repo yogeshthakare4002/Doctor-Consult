@@ -17,9 +17,9 @@ $index = $index ?? 0;
       <div class="doctor-image-container">
         <img src="<?php echo esc_url($doctor['image'] ?? get_template_directory_uri() . '/assets/images/doctor.svg'); ?>" 
              alt="<?php echo esc_attr($doctor['name'] ?? 'Dr. Harleen'); ?>" 
-             class="doctor-photo" />
+             class="doctor-photo" width=95 height=125 />
         <div class="profile-icon">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/user-icon.svg" alt="profile icon" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/user-icon.svg" alt="profile icon" width=10 height=10 />
         </div>
       </div>
 
@@ -29,7 +29,7 @@ $index = $index ?? 0;
 
         <div class="doctor-info">
           <div class="language-info">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/alphabet.svg" alt="language icon" class="language-icon" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/alphabet.svg" alt="language icon" class="language-icon" width=20 height=20 />
             <span class="languages"><?php echo esc_html($doctor['languages'] ?? 'English, Hindi'); ?></span>
           </div>
 

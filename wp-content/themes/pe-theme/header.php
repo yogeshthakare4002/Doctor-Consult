@@ -61,6 +61,8 @@ $nav_links = array(
                     class="logo-image logo-image-desktop"
                     decoding="async"
                     loading="eager"
+                    width=160
+                    height=30
                 >
                 <img
                     src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/header-logo-mobile.svg'); ?>"
@@ -68,6 +70,8 @@ $nav_links = array(
                     class="logo-image logo-image-mobile"
                     decoding="async"
                     loading="eager"
+                    width=160
+                    height=30
                 >
             </a>
         </div>

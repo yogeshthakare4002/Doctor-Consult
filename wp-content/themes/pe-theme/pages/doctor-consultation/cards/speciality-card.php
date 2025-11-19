@@ -7,7 +7,7 @@
 
 <div class="carousel-card speciality-card">
   <?php if (!empty($item['image'])): ?>
-    <img class="card-image" src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title'] ?? ''); ?>" />
+    <img class="card-image" src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title'] ?? ''); ?>" width=50 height=50/>
   <?php endif; ?>
 
   <div class="card-content">

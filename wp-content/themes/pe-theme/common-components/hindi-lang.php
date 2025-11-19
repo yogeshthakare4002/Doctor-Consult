@@ -21,8 +21,8 @@ if ($is_hindi) {
 <div class="hindi-lang-component">
   <button type="button" class="hindi-lang-button" aria-label="<?php echo esc_attr($aria_label); ?>">
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="lang-icon">
-      <text x="2" y="14" font-family="Arial" font-size="12" font-weight="700" fill="#30363C">A</text>
-      <text x="10" y="14" font-family="Arial" font-size="12" font-weight="700" fill="#30363C">अ</text>
+      <text x="2" y="14" font-family="Arial" font-size="12" font-weight="700" fill="#10847E">A</text>
+      <text x="10" y="14" font-family="Arial" font-size="12" font-weight="700" fill="#10847E">अ</text>
     </svg>
     <span class="hindi-lang-text"><?php echo esc_html($button_text); ?></span>
   </button>

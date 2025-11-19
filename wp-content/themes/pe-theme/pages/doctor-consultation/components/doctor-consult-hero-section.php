@@ -9,17 +9,22 @@
   <div class="doctor-consult-hero-container">
     <div class="doctor-consult-hero-content">
       <div class="doctor-consult-hero-branding">
-        <img class="doctor-consult-hero-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor.svg" alt="doctor Logo"/>
+        <img class="doctor-consult-hero-logo" 
+          src="<?php echo get_template_directory_uri(); ?>/assets/images/doctor.svg" 
+          alt="doctor Logo"
+          width=30
+          height=30
+        />
         <div class="doctor-consult-hero-brand-text">
           <p class="doctor-consult-hero-brand-title">Doctor Consult</p>
           <p class="doctor-consult-hero-brand-subtitle">by <b>PharmEasy</b></p>
         </div>
       </div>
 
-      <div class="doctor-consult-hero-headings">
+      <h1 class="doctor-consult-hero-headings">
         <span class="doctor-consult-hero-heading-primary">Consult Certified Doctors</span>
         <span class="doctor-consult-hero-heading-secondary">Online - 24/7 Access</span>
-      </div>
+      </h1>
 
       <p class="doctor-consult-hero-service-text">Video/Audio call • Starting at just ₹199</p>
 
@@ -27,19 +32,19 @@
 
       <div class="doctor-consult-hero-feature-list">
         <div class="doctor-consult-hero-feature-item">
-          <img class="doctor-consult-hero-feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/secure-session.svg" alt="Verified Doctors Icon"/>
+          <img class="doctor-consult-hero-feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/secure-session.svg" alt="Verified Doctors Icon" width=20 height=20/>
           <span class="doctor-consult-hero-feature-text">Private and Secure sessions</span>
         </div>
         <div class="doctor-consult-hero-feature-item">
-          <img class="doctor-consult-hero-feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/follow-up.svg" alt="Free Follow Up Icon"/>
+          <img class="doctor-consult-hero-feature-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/follow-up.svg" alt="Free Follow Up Icon" width=20 height=20/>
           <span class="doctor-consult-hero-feature-text">Free follow up & Cancellation</span>
         </div>
       </div>
     </div>
 
     <div class="doctor-consult-hero-visuals">
-      <img class="doctor-consult-hero-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-image.svg" alt="Banner Image"/>
-      <img class="doctor-consult-hero-image-bg" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-image-bg.svg" alt="Banner Image bg"/>
+      <img class="doctor-consult-hero-image" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-image.svg" alt="Banner Image" width=280 height=200/>
+      <img class="doctor-consult-hero-image-bg" src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-image-bg.svg" alt="Banner Image bg" width=400 height=270/>
     </div>
   </div>
 </section>

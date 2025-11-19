@@ -18,7 +18,7 @@
   </div>
   <div class="review-card-footer">
     <div class="review-author">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/person.svg" alt="author" class="author-icon" />
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/person.svg" alt="author" class="author-icon" width=10 height=10 />
       <span class="author-name"><?php echo esc_html($item['author']); ?></span>
       <span class="review-date"><?php echo esc_html($item['date']); ?></span>
     </div>

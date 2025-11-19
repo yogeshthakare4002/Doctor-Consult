@@ -14,8 +14,8 @@
   </div>
   <div class="card-images">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-image-bg.svg" alt="Doctor Image Background"
-      class="doctor-image-background" />
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-image.svg" alt="Banner Image" class="banner-image" />
+      class="doctor-image-background" width=170 height=100/>
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner-image.svg" alt="Banner Image" class="banner-image" width=50 height=50/>
   </div>
 </section>
 

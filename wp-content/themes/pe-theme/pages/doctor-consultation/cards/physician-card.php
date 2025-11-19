@@ -12,7 +12,7 @@ $index = $index ?? 0;
 <div class="physician-card" data-index="<?php echo esc_attr($index); ?>">
   <div class="physician-image-container">
     <img src="<?php echo esc_url($physician['image'] ?? get_template_directory_uri() . '/assets/images/doctor.svg'); ?>"
-      alt="<?php echo esc_attr($physician['name'] ?? 'Dr. Harleen'); ?>" class="physician-photo" />
+      alt="<?php echo esc_attr($physician['name'] ?? 'Dr. Harleen'); ?>" class="physician-photo" width=50 height=50 />
   </div>
 
   <div class="physician-info">

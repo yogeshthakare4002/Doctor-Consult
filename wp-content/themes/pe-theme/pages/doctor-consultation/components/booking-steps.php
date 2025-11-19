@@ -48,7 +48,7 @@ $booking_steps = array(
                     <div class="step-icon">
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-icon-image">
-                            <img src="<?php echo esc_url($step['icon']); ?>" alt="<?php echo esc_attr($step['title']); ?>" />
+                            <img src="<?php echo esc_url($step['icon']); ?>" alt="<?php echo esc_attr($step['title']); ?>" width=80 height=80 />
                         </div>
                     </div>
                     <div class="step-content">

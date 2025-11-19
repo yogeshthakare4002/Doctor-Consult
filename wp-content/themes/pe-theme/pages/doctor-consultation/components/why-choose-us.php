@@ -55,7 +55,7 @@ $features_data = array(
       <?php for ($i = 0; $i < 3; $i++): ?>
         <div class="feature-card <?php echo esc_attr($features_data[$i]['card_highlight']); ?>">
           <div class="feature-icon <?php echo esc_attr($features_data[$i]['icon_bg']); ?>">
-            <img src="<?php echo esc_url($features_data[$i]['icon']); ?>" alt="<?php echo esc_attr($features_data[$i]['title']); ?>" />
+            <img src="<?php echo esc_url($features_data[$i]['icon']); ?>" alt="<?php echo esc_attr($features_data[$i]['title']); ?>" width=55 height=55  />
           </div>
           <div class="feature-content">
             <h3 class="feature-title"><?php echo esc_html($features_data[$i]['title']); ?></h3>
@@ -69,7 +69,7 @@ $features_data = array(
       <?php for ($i = 3; $i < 5; $i++): ?>
         <div class="feature-card <?php echo esc_attr($features_data[$i]['card_highlight']); ?>">
           <div class="feature-icon <?php echo esc_attr($features_data[$i]['icon_bg']); ?>">
-            <img src="<?php echo esc_url($features_data[$i]['icon']); ?>" alt="<?php echo esc_attr($features_data[$i]['title']); ?>" />
+            <img src="<?php echo esc_url($features_data[$i]['icon']); ?>" alt="<?php echo esc_attr($features_data[$i]['title']); ?>" width=50 height=55 />
           </div>
           <div class="feature-content">
             <h3 class="feature-title"><?php echo esc_html($features_data[$i]['title']); ?></h3>

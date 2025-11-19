@@ -12,7 +12,7 @@ $index = $index ?? 'more';
 <div class="condition-card-more" onclick="window.location.href='<?php echo esc_url($show_more['link'] ?? '#'); ?>'">
     <div class="more-icon">
         <img src="<?php echo esc_url($show_more['icon'] ?? get_template_directory_uri() . '/assets/images/plus.svg'); ?>" 
-             alt="More conditions" />
+             alt="More conditions" width=70 height=48 />
     </div>
     <p class="more-text"><?php echo esc_html($show_more['name'] ?? '20+ more'); ?></p>
 </div>

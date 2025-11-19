@@ -10,23 +10,23 @@
   <div class="trust-marker-content">
     <div class="trust-marker-container-wrapper">
       <div class="trust-marker-container">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon left-leaf"/>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon left-leaf" width=32 height=55/>
         <p class="trust-marker-text">40+ Certified Doctors</p>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon right-leaf"/>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon right-leaf" width=32 height=55/>
       </div>
     </div>
     <div class="trust-marker-container-wrapper">
     <div class="trust-marker-container">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon left-leaf"/>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon left-leaf" width=32 height=55/>
       <p class="trust-marker-text">5K Successful Consultations</p>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon right-leaf"/>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon right-leaf" width=32 height=55/>
     </div>
     </div>
     <div class="trust-marker-container-wrapper">
     <div class="trust-marker-container">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon left-leaf"/>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon left-leaf" width=32 height=55/>
       <p class="trust-marker-text">4.8 Reviews by Patients</p>
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon right-leaf"/>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.svg" alt="left leaf" class="leaf-icon right-leaf" width=32 height=55/>
     </div>
     </div>
   </div>
