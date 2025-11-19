@@ -29,7 +29,7 @@ if (empty($breadcrumb_items)) {
     $breadcrumb_items = [
         [
             'title' => __('Home', 'pe-theme'),
-            'link'  => home_url('/'),
+            'link'  => 'https://pharmeasy.in',
         ],
         [
             'title' => get_the_title(),

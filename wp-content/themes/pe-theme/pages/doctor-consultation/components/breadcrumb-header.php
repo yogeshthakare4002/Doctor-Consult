@@ -12,7 +12,7 @@ $breadcrumb_items = get_query_var('breadcrumb_items');
 
 if (!is_array($breadcrumb_items) || empty($breadcrumb_items)) {
   $is_hindi = strpos($_SERVER['REQUEST_URI'], '/hi') !== false;
-  $home_url = trailingslashit(home_url('/'));
+  $home_url = 'https://pharmeasy.in';
   $home_text = $is_hindi ? 'होम' : __('Home', 'pe-theme');
   $current_title = $is_hindi ? 'ऑनलाइन डॉक्टर परामर्श' : __('Online Doctor Consultation', 'pe-theme');
 

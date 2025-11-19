@@ -213,6 +213,162 @@ add_action('send_headers', 'doctor_consult_security_headers');
 
 
 /**
+ * Get meta title from database
+ * Priority: Page/Post specific > Global default > WordPress default
+ * 
+ * @return string Meta title
+ */
+function doctor_consult_get_meta_title() {
+    global $wpdb;
+    
+    // Get current page/post ID
+    $post_id = get_queried_object_id();
+    $meta_title = '';
+    
+    // Try to get page/post specific meta title from wp_options
+    if ($post_id) {
+        $option_name = 'meta_title_' . $post_id;
+        $meta_title = get_option($option_name, '');
+        
+        // If not in wp_options, try post meta
+        if (empty($meta_title)) {
+            $meta_title = get_post_meta($post_id, 'meta_title', true);
+        }
+    }
+    
+    // Fallback to global default meta title
+    if (empty($meta_title)) {
+        $meta_title = get_option('default_meta_title', '');
+    }
+    
+    // Final fallback to WordPress title
+    if (empty($meta_title)) {
+        $meta_title = wp_get_document_title();
+    }
+    
+    return esc_attr($meta_title);
+}
+
+/**
+ * Get meta description from database
+ * Priority: Page/Post specific > Global default > WordPress default
+ * 
+ * @return string Meta description
+ */
+function doctor_consult_get_meta_description() {
+    global $wpdb;
+    
+    // Get current page/post ID
+    $post_id = get_queried_object_id();
+    $meta_description = '';
+    
+    // Try to get page/post specific meta description from wp_options
+    if ($post_id) {
+        $option_name = 'meta_description_' . $post_id;
+        $meta_description = get_option($option_name, '');
+        
+        // If not in wp_options, try post meta
+        if (empty($meta_description)) {
+            $meta_description = get_post_meta($post_id, 'meta_description', true);
+        }
+    }
+    
+    // Fallback to global default meta description
+    if (empty($meta_description)) {
+        $meta_description = get_option('default_meta_description', '');
+    }
+    
+    // Final fallback to blog description
+    if (empty($meta_description)) {
+        $meta_description = get_bloginfo('description');
+    }
+    
+    return esc_attr($meta_description);
+}
+
+/**
+ * Get canonical URL from database
+ * Priority: Page/Post specific > Current page URL
+ * 
+ * @return string Canonical URL
+ */
+function doctor_consult_get_canonical_url() {
+    global $wpdb;
+    
+    // Get current page/post ID
+    $post_id = get_queried_object_id();
+    $canonical_url = '';
+    
+    // Try to get page/post specific canonical URL from wp_options
+    if ($post_id) {
+        $option_name = 'canonical_url_' . $post_id;
+        $canonical_url = get_option($option_name, '');
+        
+        // If not in wp_options, try post meta
+        if (empty($canonical_url)) {
+            $canonical_url = get_post_meta($post_id, 'canonical_url', true);
+        }
+    }
+    
+    // Fallback to current page URL
+    if (empty($canonical_url)) {
+        $canonical_url = (is_ssl() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        // Remove query strings for canonical
+        $canonical_url = strtok($canonical_url, '?');
+    }
+    
+    return esc_url($canonical_url);
+}
+
+/**
+ * Filter document title to use custom meta title from database
+ */
+add_filter('document_title_parts', function($title_parts) {
+    $post_id = get_queried_object_id();
+    $page_title = '';
+    
+    // Check for page/post specific meta title
+    if ($post_id) {
+        $option_name = 'meta_title_' . $post_id;
+        $page_title = get_option($option_name, '');
+        if (empty($page_title)) {
+            $page_title = get_post_meta($post_id, 'meta_title', true);
+        }
+    }
+    
+    // Fallback to global default
+    if (empty($page_title)) {
+        $page_title = get_option('default_meta_title', '');
+    }
+    
+    // Override title if we have a custom one
+    if (!empty($page_title)) {
+        $title_parts['title'] = $page_title;
+    }
+    
+    return $title_parts;
+}, 10, 1);
+
+/**
+ * Add meta tags to head
+ */
+function doctor_consult_add_meta_tags() {
+    $meta_description = doctor_consult_get_meta_description();
+    $canonical_url = doctor_consult_get_canonical_url();
+    
+    // Output meta description
+    if (!empty($meta_description)) {
+        echo '<meta name="description" content="' . $meta_description . '">' . "\n";
+    }
+    
+    // Output canonical URL
+    if (!empty($canonical_url)) {
+        echo '<link rel="canonical" href="' . $canonical_url . '">' . "\n";
+    }
+}
+add_action('wp_head', 'doctor_consult_add_meta_tags', 1);
+
+/**
  * Add theme activation hook
  */
 function doctor_consult_theme_activation() {
