@@ -73,7 +73,7 @@ $nav_links = array(
         </div>
         
         <!-- Navigation Menu -->
-        <nav class="header-nav" id="headerNav">
+        <nav class="header-nav" id="headerNav" aria-hidden="true">
             <ul class="nav-menu">
                 <?php foreach ($nav_links as $link) : ?>
                 <li class="nav-item">
@@ -84,6 +84,7 @@ $nav_links = array(
                 <?php endforeach; ?>
             </ul>
         </nav>
+        <div class="header-nav-overlay" id="headerNavOverlay" hidden></div>
     </div>
 </header>
 
@@ -92,30 +93,44 @@ $nav_links = array(
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
     const nav = document.querySelector('.header-nav');
+    const overlay = document.getElementById('headerNavOverlay');
+    const body = document.body;
     
     if (hamburger && nav) {
+        const toggleNav = (shouldOpen) => {
+            const willOpen = typeof shouldOpen === 'boolean' ? shouldOpen : hamburger.getAttribute('aria-expanded') !== 'true';
+            
+            hamburger.classList.toggle('active', willOpen);
+            hamburger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            nav.classList.toggle('active', willOpen);
+            nav.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+            
+            if (overlay) {
+                overlay.classList.toggle('active', willOpen);
+                overlay.toggleAttribute('hidden', !willOpen);
+            }
+            
+            body.classList.toggle('no-scroll', willOpen);
+        };
+        
         hamburger.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            
-            // Toggle aria-expanded
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            // Toggle active class on hamburger
-            this.classList.toggle('active');
-            
-            // Toggle active class on nav
-            nav.classList.toggle('active');
+            toggleNav();
         });
         
         // Close menu when clicking on a nav link
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                nav.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
+                toggleNav(false);
             });
         });
+        
+        if (overlay) {
+            overlay.addEventListener('click', function() {
+                toggleNav(false);
+            });
+        }
     }
 });
 </script>
+
