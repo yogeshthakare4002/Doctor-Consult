@@ -6,7 +6,7 @@
 
 // Check if we're on Hindi version
 $current_url_path = $_SERVER['REQUEST_URI'];
-$is_hindi = strpos($current_url_path, '/hi') !== false || strpos($current_url_path, '/hi/') !== false;
+$is_hindi = preg_match('#^/hi(/|$)#', $current_url_path);
 
 // Set button text and aria label based on current language
 if ($is_hindi) {
@@ -81,6 +81,28 @@ if ($is_hindi) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const hindiButton = document.querySelector('.hindi-lang-button');
+
+  hindiButton.addEventListener('click', function() {
+    const url = new URL(window.location.href);
+    let path = url.pathname;
+
+    const isHindi = path.startsWith('/hi/');
+
+    if (isHindi) {
+      url.pathname = path.replace(/^\/hi/, '') || '/';
+    } else {
+      url.pathname = '/hi' + (path === '/' ? '' : path);
+    }
+
+    window.location.href = url.href;
+  });
+});
+</script>
+
+
+<!-- <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hindiButton = document.querySelector('.hindi-lang-button');
   
   hindiButton.addEventListener('click', function() {
     // Get current URL
@@ -113,5 +135,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-</script>
+</script> -->
 

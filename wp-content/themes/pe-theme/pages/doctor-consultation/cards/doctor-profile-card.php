@@ -47,7 +47,7 @@ $index = $index ?? 0;
       </div>
 
       <button class="consult-now-btn" onclick="window.location.href='<?php echo esc_url($doctor['link'] ?? '#'); ?>'">
-        Consult now
+        Book Consult
       </button>
     </div>
   </div>

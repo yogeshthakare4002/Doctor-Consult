@@ -20,7 +20,8 @@ if (!defined('ABSPATH')) {
         <?php get_template_part('pages/doctor-consultation/cards/online-consultation-promo-card'); ?>
         <?php get_template_part('pages/doctor-consultation/components/doctor-profile-carousel'); ?>
         <?php get_template_part('pages/doctor-consultation/components/popular-conditions'); ?>
-        <?php get_template_part('pages/doctor-consultation/components/top-physician-horizontal-scroll'); ?>
+        <!-- commented out top physician horizontal scroll component descoped in v0 -->
+        <!-- <?php get_template_part('pages/doctor-consultation/components/top-physician-horizontal-scroll'); ?> -->
         <?php get_template_part('pages/doctor-consultation/components/consult-info'); ?>
         <?php get_template_part('pages/doctor-consultation/components/why-choose-us'); ?>
         <?php get_template_part('pages/doctor-consultation/components/booking-steps'); ?>

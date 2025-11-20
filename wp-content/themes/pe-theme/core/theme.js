@@ -52,5 +52,4 @@
             console.log('Consult now button clicked');
         });
     }
-    
 })(jQuery);
