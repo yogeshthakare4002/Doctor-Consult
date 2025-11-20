@@ -13,14 +13,13 @@ body.no-scroll {
     color: #10847E;
     border-bottom: 1px solid rgba(16, 132, 126, 0.15);
     padding: 0;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 999;
     width: 100%;
     transition: top 0.2s ease;
 }
 
-/* Adjust for WordPress admin bar - only when at top of page */
 body.admin-bar .site-header {
     top: 32px;
 }
@@ -30,6 +29,7 @@ body.admin-bar .site-header {
         top: 46px;
     }
 }
+
 
 .header-container {
     display: flex;
@@ -157,13 +157,9 @@ body.admin-bar .site-header {
 @media (max-width: 767px) {
     .site-header {
         border-bottom: none;
-        position: sticky;
+        position: fixed;
         top: 0;
         z-index: 999;
-    }
-    
-    body.admin-bar .site-header {
-        top: 46px;
     }
     
     .header-container {
