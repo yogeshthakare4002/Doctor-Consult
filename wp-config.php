@@ -18,7 +18,7 @@ if ( WP_ENVIRONMENT === 'local' ) {
     define( 'DB_NAME', 'wordpress_db' );
     define( 'DB_USER', 'root' );
     define( 'DB_PASSWORD', '' );
-    define( 'DB_HOST', 'localhost' );
+    define( 'DB_HOST', 'localhost:8000' );
 } elseif ( WP_ENVIRONMENT === 'staging' ) {
     // Staging Database (Hostinger)
     define( 'DB_NAME', 'u914396707_doctor_consult' );
@@ -32,6 +32,7 @@ if ( WP_ENVIRONMENT === 'local' ) {
     define( 'DB_PASSWORD', 'your_production_db_password' );
     define( 'DB_HOST', 'localhost' );
 }
+
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -78,7 +79,14 @@ define( 'WP_DEBUG_DISPLAY', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-/* That's all, stop editing! Happy publishing. */
+// ** WordPress URLs ** //
+if ( WP_ENVIRONMENT === 'local' ) {
+    define( 'WP_HOME', 'http://localhost:8000' );
+    define( 'WP_SITEURL', 'http://localhost:8000' );
+} elseif ( WP_ENVIRONMENT === 'staging' ) {
+    define( 'WP_HOME', 'https://stagingdoctorconsult.pharmeasy.in' );
+    define( 'WP_SITEURL', 'https://stagingdoctorconsult.pharmeasy.in' );
+}
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {

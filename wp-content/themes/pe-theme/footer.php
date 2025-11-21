@@ -9,7 +9,7 @@ $footer_company = array(
     array('label' => 'About Us', 'url' => '/about-us'),
     array('label' => 'Careers', 'url' => '/careers'),
     array('label' => 'Blog', 'url' => '/blog'),
-    array('label' => 'Partner with PharmEasy', 'url' => '/partner'),
+    array('label' => 'Partner with PharmEasy', 'url' => '/franchisestores'),
 );
 
 $footer_services = array(
@@ -19,46 +19,47 @@ $footer_services = array(
 );
 
 $footer_categories = array(
-    array('label' => 'Must Haves', 'url' => '/categories/must-haves'),
-    array('label' => 'Sports Nutrition', 'url' => '/categories/sports-nutrition'),
-    array('label' => 'Elderly Care', 'url' => '/categories/elderly-care'),
-    array('label' => 'Heart Care', 'url' => '/categories/heart-care'),
-    array('label' => 'Personal Care', 'url' => '/categories/personal-care'),
-    array('label' => 'Healthcare Devices', 'url' => '/categories/healthcare-devices'),
-    array('label' => 'Health Food and Drinks', 'url' => '/categories/health-food'),
-    array('label' => 'Skin Care', 'url' => '/categories/skin-care'),
-    array('label' => 'Mother and Baby Care', 'url' => '/categories/mother-baby-care'),
-    array('label' => 'Accessories & Wearables', 'url' => '/categories/accessories'),
-    array('label' => 'Vitamins & Supplements', 'url' => '/categories/vitamins-supplements'),
-    array('label' => 'Ayurvedic Care', 'url' => '/categories/ayurvedic-care'),
-    array('label' => 'Sexual Wellness', 'url' => '/categories/sexual-wellness'),
-    array('label' => 'Diabetic Care', 'url' => '/categories/diabetic-care'),
-    array('label' => 'Health Condition', 'url' => '/categories/health-condition'),
-    array('label' => 'Homeopathy Care', 'url' => '/categories/homeopathy-care'),
+    array('label' => 'Must Haves', 'url' => '/health-care/top-products-9297'),
+    array('label' => 'Vitamins & Supplements', 'url' => '/health-care/fitness-supplements-623'),
+    array('label' => 'Personal Care', 'url' => '/health-care/personal-care-877'),
+    array('label' => 'Winter Store', 'url' => '/health-care/winter-store-16321'),
+    array('label' => 'Diabetes Essentials', 'url' => '/health-care/diabetic-care-145'),
+    array('label' => 'Health Concerns', 'url' => '/health-care/health-condition-693'),
+    array('label' => 'Health Food and Drinks', 'url' => '/health-care/health-food-and-drinks-648'),
+    array('label' => 'Sexual Wellness', 'url' => '/health-care/sexual-wellness-575'),
+    array('label' => 'Heart Care', 'url' => '/health-care/cardiac-store-14374'),
+    array('label' => 'Ayurvedic Care', 'url' => '/health-care/ayurvedic-care-765'),
+    array('label' => 'Mother and Baby Care', 'url' => '/health-care/mother-and-baby-care-838'),
+    array('label' => 'Mobility & Elderly Care', 'url' => '/health-care/elderly-care-750'),
+    array('label' => 'Sports Nutrition', 'url' => '/health-care/sports-nutrition-12931'),
+    array('label' => 'Healthcare Devices', 'url' => '/health-care/healthcare-devices-717'),
+    array('label' => 'Skin Care', 'url' => '/health-care/skin-care-93'),
+    array('label' => 'Explore More', 'url' => '/health-care/health-essentials-15393'),
 );
 
 $footer_help = array(
-    array('label' => 'Browse All Medicines', 'url' => '/all-medicines'),
-    array('label' => 'Browse All Molecules', 'url' => '/all-molecules'),
-    array('label' => 'Browse All Cities & Areas', 'url' => '/all-cities'),
-    array('label' => 'FAQs', 'url' => '/faqs'),
+    array('label' => 'Browse All Medicines', 'url' => '/online-medicine-order/browse'),
+    array('label' => 'Browse All Molecules', 'url' => '/molecules'),
+    array('label' => 'Browse All Cities & Areas', 'url' => '/online-medicine-order/browse/areas'),
+    array('label' => 'FAQs', 'url' => '/help'),
 );
 
 $footer_policy = array(
     array('label' => 'Editorial Policy', 'url' => '/legal/editorial-policy'),
     array('label' => 'Privacy Policy', 'url' => '/legal/privacy-policy'),
-    array('label' => 'Vulnerability Disclosure Policy', 'url' => '/legal/vulnerability-disclosure'),
-    array('label' => 'Terms and Conditions', 'url' => '/legal/terms-and-conditions'),
-    array('label' => 'Customer Support Policy', 'url' => '/legal/customer-support-policy'),
-    array('label' => 'Return Policy', 'url' => '/legal/return-policy'),
-    array('label' => 'Smartbuy Policy', 'url' => '/legal/smartbuy-policy'),
+    array('label' => 'Vulnerability Disclosure Policy', 'url' => '/vulnerability-disclosure-policy'),
+    array('label' => 'Terms and Conditions', 'url' => '/terms-and-conditions'),
+    array('label' => 'Declaration on Dark Pattern', 'url' => 'https://assets.pharmeasy.in/web-assets/legal/circulars/Axelia_Self-Declaration_Dark_Patterns.pdf', 'isPdf' => true),
+    array('label' => 'Customer Support Policy', 'url' => '/customer-support-policy'),
+    array('label' => 'Return Policy', 'url' => '/return-policy'),
+    array('label' => 'Smartbuy Policy', 'url' => '/smartbuy-policy'),
 );
 
 $social_links = array(
-    array('name' => 'Instagram', 'url' => '#', 'icon' => 'instagram'),
-    array('name' => 'Facebook', 'url' => '#', 'icon' => 'facebook'),
-    array('name' => 'YouTube', 'url' => '#', 'icon' => 'youtube'),
-    array('name' => 'Twitter', 'url' => '#', 'icon' => 'twitter'),
+    array('name' => 'Instagram', 'url' => 'https://www.instagram.com/pharmeasyapp/', 'icon' => 'instagram'),
+    array('name' => 'Facebook', 'url' => 'https://www.facebook.com/pharmeasy/', 'icon' => 'facebook'),
+    array('name' => 'YouTube', 'url' => 'https://www.youtube.com/channel/UCDats_DLX-bGZH3-KGu8JhA', 'icon' => 'youtube'),
+    array('name' => 'Twitter', 'url' => 'https://www.twitter.com/pharmeasyapp/', 'icon' => 'twitter'),
 );
 
 $payment_partners = array(
@@ -130,7 +131,13 @@ $payment_partners = array(
                         <h3 class="footer-heading">Policy Info</h3>
                         <ul class="footer-links">
                             <?php foreach ($footer_policy as $link) : ?>
-                            <li><a href="<?php echo esc_url(home_url($link['url'])); ?>"><?php echo esc_html($link['label']); ?></a></li>
+                            <?php
+                            $link_url = isset($link['url']) ? $link['url'] : '';
+                            $is_pdf_link = !empty($link['isPdf']) || (bool) preg_match('/\.pdf($|\?)/i', $link_url);
+                            $is_absolute_url = (bool) preg_match('#^https?://#i', $link_url);
+                            $resolved_url = ($is_pdf_link || $is_absolute_url) ? $link_url : home_url($link_url);
+                            ?>
+                            <li><a href="<?php echo esc_url($resolved_url); ?>"><?php echo esc_html($link['label']); ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
