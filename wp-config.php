@@ -10,7 +10,7 @@
 
 // ** Environment Configuration ** //
 // Set your environment: 'local', 'staging', or 'production'
-define( 'WP_ENVIRONMENT', 'staging' ); // Change this based on your environment
+define( 'WP_ENVIRONMENT', 'local' ); // Change this based on your environment
 
 // ** Database settings - You can get this info from your web host ** //
 if ( WP_ENVIRONMENT === 'local' ) {
