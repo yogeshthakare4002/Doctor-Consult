@@ -60,3 +60,9 @@ package-lock.json
 !setup-local-db.sql
 !DEPLOYMENT-GUIDE.md
 
+# One-time utility scripts (contain sensitive credentials)
+export-*.php
+*-staging-data.php
+update-*.php
+setup-production-db.sql
+

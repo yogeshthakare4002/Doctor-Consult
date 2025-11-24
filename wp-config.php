@@ -10,7 +10,7 @@
 
 // ** Environment Configuration ** //
 // Set your environment: 'local', 'staging', or 'production'
-define( 'WP_ENVIRONMENT', 'staging' ); // Change this based on your environment
+define( 'WP_ENVIRONMENT', 'production' ); // Change this based on your environment
 
 // ** Database settings - You can get this info from your web host ** //
 if ( WP_ENVIRONMENT === 'local' ) {
@@ -18,7 +18,7 @@ if ( WP_ENVIRONMENT === 'local' ) {
     define( 'DB_NAME', 'wordpress_db' );
     define( 'DB_USER', 'root' );
     define( 'DB_PASSWORD', '' );
-    define( 'DB_HOST', 'localhost:8000' );
+    define( 'DB_HOST', 'localhost' ); // MySQL default port 3306 is used automatically
 } elseif ( WP_ENVIRONMENT === 'staging' ) {
     // Staging Database (Hostinger)
     define( 'DB_NAME', 'u914396707_doctor_consult' );
@@ -27,10 +27,10 @@ if ( WP_ENVIRONMENT === 'local' ) {
     define( 'DB_HOST', '193.203.184.146:3306' );
 } else {
     // Production Database (Hostinger)
-    define( 'DB_NAME', 'your_production_db_name' );
-    define( 'DB_USER', 'your_production_db_user' );
-    define( 'DB_PASSWORD', 'your_production_db_password' );
-    define( 'DB_HOST', 'localhost' );
+    define( 'DB_NAME', 'u914396707_dcprod' );
+    define( 'DB_USER', 'u914396707_instinct_IIPL' );
+    define( 'DB_PASSWORD', 'Instinct_2025' );
+    define( 'DB_HOST', 'localhost' ); // Use localhost for same-server MySQL connection
 }
 
 
@@ -72,9 +72,19 @@ $table_prefix = 'wp_';
 /**
  * For developers: WordPress debugging mode.
  */
-define( 'WP_DEBUG', false );
-define( 'WP_DEBUG_LOG', false );
-define( 'WP_DEBUG_DISPLAY', false );
+// Debug settings based on environment
+if ( WP_ENVIRONMENT === 'local' || WP_ENVIRONMENT === 'staging' ) {
+    define( 'WP_DEBUG', true );
+    define( 'WP_DEBUG_LOG', true );
+    define( 'WP_DEBUG_DISPLAY', false );
+    define( 'SCRIPT_DEBUG', true );
+} else {
+    // Production: Disable all debugging
+    define( 'WP_DEBUG', false );
+    define( 'WP_DEBUG_LOG', false );
+    define( 'WP_DEBUG_DISPLAY', false );
+    define( 'SCRIPT_DEBUG', false );
+}
 
 
 /* Add any custom values between this line and the "stop editing" line. */
@@ -86,6 +96,10 @@ if ( WP_ENVIRONMENT === 'local' ) {
 } elseif ( WP_ENVIRONMENT === 'staging' ) {
     define( 'WP_HOME', 'https://stagingdoctorconsult.pharmeasy.in' );
     define( 'WP_SITEURL', 'https://stagingdoctorconsult.pharmeasy.in' );
+} else {
+    // Production URLs
+    define( 'WP_HOME', 'https://online-doctor-consultation.pharmeasy.in' );
+    define( 'WP_SITEURL', 'https://online-doctor-consultation.pharmeasy.in' );
 }
 
 /** Absolute path to the WordPress directory. */
