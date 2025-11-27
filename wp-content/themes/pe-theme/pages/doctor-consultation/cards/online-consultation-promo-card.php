@@ -5,7 +5,6 @@
  */
 ?>
 
-<div class="border-separator"></div>
 
 <section class="online-consultation-promo-card">
   <div class="promo-content">
@@ -19,15 +18,8 @@
   </div>
 </section>
 
-<div class="border-separator"></div>
 
 <style>
-  .border-separator{
-    display: none;
-    width: 100%;
-    height: 4px;
-    background-color: #EDF2F9;
-  }
 
   .online-consultation-promo-card {
     width: 100%;
@@ -99,14 +91,11 @@
   }
 
   @media screen and (max-width: 768px) {
-    .border-separator{
-      display: block;
-    }
 
     .online-consultation-promo-card {
       width: unset;
       height: 124px;
-      margin: 24px 12px;
+      margin: 0px 12px;
       padding: 12px;
     }
 

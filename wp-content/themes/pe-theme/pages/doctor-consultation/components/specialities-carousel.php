@@ -135,11 +135,11 @@ echo render_carousel($specialities_data, $config);
     display: none;
     margin: 0;
     padding: 0 16px;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
 }
 
 .specialities-mobile-header {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .specialities-mobile-title {

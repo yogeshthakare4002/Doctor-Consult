@@ -39,7 +39,6 @@
       gap: 12px;
       overflow: hidden;
       margin : 0px 12px;
-      margin-bottom: 24px;
     }
 
     .assurance-card-mobile::before {

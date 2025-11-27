@@ -114,6 +114,7 @@ echo render_carousel($conditions_data, $carousel_config);
     </div>
 </div>
 
+
 <style>
 /* Desktop Carousel View */
 .conditions-carousel-container {
@@ -154,7 +155,7 @@ echo render_carousel($conditions_data, $carousel_config);
 /* Mobile Flexbox View */
 .conditions-mobile {
     display: none;
-    margin: 40px 0;
+    margin: 0px;
     padding: 0 16px;
 }
 

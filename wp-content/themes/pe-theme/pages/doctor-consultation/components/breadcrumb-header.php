@@ -50,7 +50,7 @@ set_query_var('breadcrumb_items', $breadcrumb_items);
   width: 100%;
   background: #FFFFFF;
   border-bottom: 1px solid #E2E8F0;
-  padding: 16px 0;
+  padding: 24px 0 48px 0;
 }
 
 .breadcrumb-header__container {
