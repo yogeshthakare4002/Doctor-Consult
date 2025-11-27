@@ -63,6 +63,7 @@ $booking_steps = array(
         </div>
 </section>
 
+
 <style>
 /* Booking Steps Section */
 .booking-steps-section {
@@ -207,6 +208,9 @@ text-align: left;
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .booking-steps-title{
+        margin-bottom: 16px;
+    }
     .booking-steps-section {
        padding: 0 16px;
     }

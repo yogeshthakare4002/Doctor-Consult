@@ -75,6 +75,7 @@
   </div>
 </section>
 
+
 <style>
 .consult-info-section {
   width: 100%;
@@ -199,7 +200,7 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .consult-info-section {
-    padding: 24px 16px;
+    padding: 0px 16px;
   }
 
   .info-item {

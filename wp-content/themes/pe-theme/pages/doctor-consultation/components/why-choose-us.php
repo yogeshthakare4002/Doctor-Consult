@@ -263,7 +263,7 @@ $features_data = array(
     .why-choose-us-section {
       border: none;
       border-radius: 0px;
-      padding: 12px;
+      padding: 0px 12px;
     }
 
     .why-choose-us-header {

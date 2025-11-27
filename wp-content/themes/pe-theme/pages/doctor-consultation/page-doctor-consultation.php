@@ -17,15 +17,22 @@ if (!defined('ABSPATH')) {
     <div class="doctor-consult-content">
         <?php get_template_part('pages/doctor-consultation/cards/assurance-card-mobile'); ?>
         <?php get_template_part('pages/doctor-consultation/components/specialities-carousel'); ?>
+        <div class="border-separator"></div>
         <?php get_template_part('pages/doctor-consultation/cards/online-consultation-promo-card'); ?>
+        <div class="border-separator"></div>
         <?php get_template_part('pages/doctor-consultation/components/doctor-profile-carousel'); ?>
+        <div class="border-separator"></div>
         <?php get_template_part('pages/doctor-consultation/components/popular-conditions'); ?>
+        <div class="border-separator"></div>
         <!-- commented out top physician horizontal scroll component descoped in v0 -->
         <!-- <?php get_template_part('pages/doctor-consultation/components/top-physician-horizontal-scroll'); ?> -->
         <?php get_template_part('pages/doctor-consultation/components/consult-info'); ?>
+        <div class="border-separator"></div>
         <?php get_template_part('pages/doctor-consultation/components/why-choose-us'); ?>
         <?php get_template_part('pages/doctor-consultation/components/booking-steps'); ?>
+        <div class="border-separator"></div>
         <?php get_template_part('pages/doctor-consultation/components/faq-section'); ?>
+        <div class="border-separator"></div>
         <?php get_template_part('pages/doctor-consultation/components/more-at-pharmeasy'); ?>
         <?php get_template_part('pages/doctor-consultation/components/reviews-section'); ?>
     </div>

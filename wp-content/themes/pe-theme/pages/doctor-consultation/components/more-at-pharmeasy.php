@@ -250,7 +250,7 @@ $section_titles = array(
 /* Mobile Styles */
 @media (max-width: 768px) {
     .more-at-pharmeasy-section {
-        padding: 32px 16px;
+        padding: 0px 16px;
         background-color: #FFFFFF;
     }
 

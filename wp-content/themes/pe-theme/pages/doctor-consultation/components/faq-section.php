@@ -222,7 +222,7 @@ $default_open_index = 0; // 0-based index for which item should be open by defau
 /* Mobile Layout */
 @media (max-width: 768px) {
   .faq-section {
-    padding: 32px 16px;
+    padding: 0px 16px;
   }
 
   .faq-header-container {
@@ -238,7 +238,7 @@ $default_open_index = 0; // 0-based index for which item should be open by defau
     font-size: 18px;
     line-height: 24px;
     letter-spacing: 0;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     width: 100%;
   }
 

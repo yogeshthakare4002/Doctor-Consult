@@ -164,7 +164,7 @@ echo render_carousel($doctors_data, $config);
 /* Mobile Horizontal Scroll Styles */
 .doctor-profile-mobile-list {
     display: none;
-    margin: 40px 0;
+    margin: 0px;
 }
 
 .doctor-profile-mobile-header {
