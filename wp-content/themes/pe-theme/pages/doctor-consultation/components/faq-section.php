@@ -9,12 +9,7 @@ require_once get_template_directory() . '/common-components/dropdown.php';
 // Fetch FAQ data from database
 global $wpdb;
 
-// Use wp_ prefix for local, no prefix for staging/production
-if (defined('WP_ENVIRONMENT') && WP_ENVIRONMENT === 'local') {
-    $table_name = $wpdb->prefix . 'faq'; // Local: wp_faq
-} else {
-    $table_name = 'faq'; // Staging/Production: faq
-}
+$table_name = 'pe_faq';
 
 // Check if table exists
 $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'") === $table_name;

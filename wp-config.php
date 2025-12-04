@@ -9,29 +9,11 @@
  */
 
 // ** Environment Configuration ** //
-// Set your environment: 'local', 'staging', or 'production'
-define( 'WP_ENVIRONMENT', 'production' ); // Change this based on your environment
-
-// ** Database settings - You can get this info from your web host ** //
-if ( WP_ENVIRONMENT === 'local' ) {
-    // Local Development Database
-    define( 'DB_NAME', 'wordpress_db' );
-    define( 'DB_USER', 'root' );
-    define( 'DB_PASSWORD', '' );
-    define( 'DB_HOST', 'localhost' ); // MySQL default port 3306 is used automatically
-} elseif ( WP_ENVIRONMENT === 'staging' ) {
-    // Staging Database (Hostinger)
-    define( 'DB_NAME', 'u914396707_DC_Stagging' );
-    define( 'DB_USER', 'u914396707_DC_Stagging' );
-    define( 'DB_PASSWORD', 'Instinct_2025' );
-    define( 'DB_HOST', '193.203.184.146:3306' );
-} else {
-    // Production Database (Hostinger)
-    define( 'DB_NAME', 'u914396707_dcprod' );
-    define( 'DB_USER', 'u914396707_instinct_IIPL' );
-    define( 'DB_PASSWORD', 'Instinct_2025' );
-    define( 'DB_HOST', 'localhost' ); // Use localhost for same-server MySQL connection
-}
+// Production Database (Hostinger)
+define( 'DB_NAME', 'u914396707_dcprod' );
+define( 'DB_USER', 'u914396707_instinct_IIPL' );
+define( 'DB_PASSWORD', 'Instinct_2025' );
+define( 'DB_HOST', 'localhost' ); // Use localhost for same-server MySQL connection
 
 
 /** Database charset to use in creating database tables. */
@@ -72,32 +54,23 @@ $table_prefix = 'pe_';
 /**
  * For developers: WordPress debugging mode.
  */
-// Debug settings based on environment
-if ( WP_ENVIRONMENT === 'local' || WP_ENVIRONMENT === 'staging' ) {
-    define( 'WP_DEBUG', true );
-    define( 'WP_DEBUG_LOG', true );
-    define( 'WP_DEBUG_DISPLAY', false );
-    define( 'SCRIPT_DEBUG', true );
-} else {
-    // Production: Disable all debugging
-    define( 'WP_DEBUG', false );
-    define( 'WP_DEBUG_LOG', false );
-    define( 'WP_DEBUG_DISPLAY', false );
-    define( 'SCRIPT_DEBUG', false );
-}
+// Production: Disable all debugging
+define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_LOG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'SCRIPT_DEBUG', false );
+
 
 
 /* Add any custom values between this line and the "stop editing" line. */
-
 // ** WordPress URLs ** //
-if ( WP_ENVIRONMENT === 'local' ) {
+// Automatically detect localhost vs prod server
+if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+    // Running locally
     define( 'WP_HOME', 'http://localhost:8000' );
     define( 'WP_SITEURL', 'http://localhost:8000' );
-} elseif ( WP_ENVIRONMENT === 'staging' ) {
-    define( 'WP_HOME', 'https://stagingdoctorconsult.pharmeasy.in' );
-    define( 'WP_SITEURL', 'https://stagingdoctorconsult.pharmeasy.in' );
 } else {
-    // Production URLs
+    // Running on Production server
     define( 'WP_HOME', 'https://online-doctor-consultation.pharmeasy.in' );
     define( 'WP_SITEURL', 'https://online-doctor-consultation.pharmeasy.in' );
 }
