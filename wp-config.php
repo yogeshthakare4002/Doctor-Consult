@@ -21,8 +21,8 @@ if ( WP_ENVIRONMENT === 'local' ) {
     define( 'DB_HOST', 'localhost' ); // MySQL default port 3306 is used automatically
 } elseif ( WP_ENVIRONMENT === 'staging' ) {
     // Staging Database (Hostinger)
-    define( 'DB_NAME', 'u914396707_doctor_consult' );
-    define( 'DB_USER', 'u914396707_iipl_2025' );
+    define( 'DB_NAME', 'u914396707_DC_Stagging' );
+    define( 'DB_USER', 'u914396707_DC_Stagging' );
     define( 'DB_PASSWORD', 'Instinct_2025' );
     define( 'DB_HOST', '193.203.184.146:3306' );
 } else {
@@ -67,7 +67,7 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
 /**
  * WordPress database table prefix.
  */
-$table_prefix = 'wp_';
+$table_prefix = 'pe_';
 
 /**
  * For developers: WordPress debugging mode.
