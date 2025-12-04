@@ -7,12 +7,8 @@
 // Fetch specialities data from database
 global $wpdb;
 
-// Use wp_ prefix for local, no prefix for staging/production
-if (defined('WP_ENVIRONMENT') && WP_ENVIRONMENT === 'local') {
-    $table_name = $wpdb->prefix . 'specialities'; // Local: wp_specialities
-} else {
-    $table_name = 'specialities'; // Staging/Production: specialities
-}
+$table_name = 'pe_specialities';
+
 
 // Check if table exists
 $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'") === $table_name;

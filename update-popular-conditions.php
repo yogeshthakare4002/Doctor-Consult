@@ -32,7 +32,7 @@ echo '<!DOCTYPE html>
 <body>
     <h1>🔄 Update Popular Conditions Data</h1>';
 
-$table_name = $wpdb->prefix . 'popular_conditions';
+$table_name = $wpdb->prefix . 'pe_popular_conditions';
 
 echo '<div class="step"><h3>Updating data to match original...</h3>';
 

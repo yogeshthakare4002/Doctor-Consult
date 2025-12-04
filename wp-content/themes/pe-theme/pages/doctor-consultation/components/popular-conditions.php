@@ -7,12 +7,8 @@
 // Fetch popular conditions data from database
 global $wpdb;
 
-// Use wp_ prefix for local, no prefix for staging/production
-if (defined('WP_ENVIRONMENT') && WP_ENVIRONMENT === 'local') {
-    $table_name = $wpdb->prefix . 'popular_conditions'; // Local: wp_popular_conditions
-} else {
-    $table_name = 'popular_conditions'; // Staging/Production: popular_conditions
-}
+$table_name = 'pe_popular_conditions';
+
 
 // Check if table exists
 $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'") === $table_name;
