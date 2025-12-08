@@ -74,8 +74,8 @@ if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost') !
     define( 'WP_HOME', 'http://localhost:8000' );
     define( 'WP_SITEURL', 'http://localhost:8000' );
 } else {
-    define( 'WP_HOME', 'https://stagingdoctorconsult.pharmeasy.in' );
-    define( 'WP_SITEURL', 'https://stagingdoctorconsult.pharmeasy.in' );
+    define( 'WP_HOME', 'https://wpstaging.pharmeasy.in' );
+    define( 'WP_SITEURL', 'https://wpstaging.pharmeasy.in' );
 }
 
 /** Absolute path to the WordPress directory. */

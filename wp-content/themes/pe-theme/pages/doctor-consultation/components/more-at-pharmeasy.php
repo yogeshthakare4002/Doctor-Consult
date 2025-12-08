@@ -19,24 +19,37 @@ $api_data = get_transient($transient_key);
 
 if (false === $api_data) {
     $response = wp_remote_get($api_url, array(
-        'timeout' => 15,
+        'timeout' => 10, // Reduced from 15 to 10 seconds
+        'sslverify' => true, // Ensure SSL verification
         'headers' => array(
             'Content-Type' => 'application/json',
         ),
+        'blocking' => true, // Keep blocking but with shorter timeout
     ));
 
     if (is_wp_error($response)) {
         error_log('PharmEasy SEO Links API Error: ' . $response->get_error_message());
+        // Set a transient with null to prevent repeated failed requests
+        set_transient($transient_key, null, 5 * MINUTE_IN_SECONDS);
         $api_data = null;
     } else {
-        $body = wp_remote_retrieve_body($response);
-        $decoded = json_decode($body, true);
-        
-        if (isset($decoded['status']) && $decoded['status'] == 1 && isset($decoded['data'])) {
-            $api_data = $decoded['data'];
-            // Cache for 1 hour
-            set_transient($transient_key, $api_data, HOUR_IN_SECONDS);
+        $response_code = wp_remote_retrieve_response_code($response);
+        if ($response_code === 200) {
+            $body = wp_remote_retrieve_body($response);
+            $decoded = json_decode($body, true);
+            
+            if (isset($decoded['status']) && $decoded['status'] == 1 && isset($decoded['data'])) {
+                $api_data = $decoded['data'];
+                // Cache for 1 hour
+                set_transient($transient_key, $api_data, HOUR_IN_SECONDS);
+            } else {
+                error_log('PharmEasy SEO Links API: Invalid response format');
+                set_transient($transient_key, null, 5 * MINUTE_IN_SECONDS);
+                $api_data = null;
+            }
         } else {
+            error_log('PharmEasy SEO Links API: HTTP ' . $response_code);
+            set_transient($transient_key, null, 5 * MINUTE_IN_SECONDS);
             $api_data = null;
         }
     }

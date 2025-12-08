@@ -93,7 +93,7 @@
   @media screen and (max-width: 768px) {
 
     .online-consultation-promo-card {
-      width: unset;
+      width: calc(100vw - 32px);
       height: 124px;
       margin: 0px 12px;
       padding: 12px;
